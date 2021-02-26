@@ -52,13 +52,15 @@
                       <Component id="jButtonLogin" min="-2" pref="69" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                       <Component id="jButtonSignUp" min="-2" pref="132" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="6" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="jPanelLeaderBoard" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <EmptySpace pref="15" max="32767" attributes="0"/>
+
           </Group>
       </Group>
     </DimensionLayout>
@@ -96,7 +98,9 @@
     <Container class="javax.swing.JPanel" name="jPanelHeader">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="99" red="99" type="rgb"/>
+
+          <Color blue="0" green="0" red="0" type="rgb"/>
+
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
@@ -114,7 +118,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
                   <Component id="jLabelLogo" min="-2" pref="102" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+
+                  <EmptySpace pref="188" max="32767" attributes="0"/>
+
               </Group>
           </Group>
         </DimensionLayout>
@@ -131,10 +137,14 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabelLogo">
           <Properties>
+
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/card game Logo.jpg"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="jLabel2"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+
           </Properties>
         </Component>
       </SubComponents>
@@ -142,7 +152,9 @@
     <Container class="javax.swing.JPanel" name="jPanelLeaderBoard">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="99" red="99" type="rgb"/>
+
+          <Color blue="33" green="66" red="0" type="rgb"/>
+
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
@@ -169,9 +181,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabelLeaderBoard" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="183" max="-2" attributes="0"/>
-                  <EmptySpace pref="50" max="32767" attributes="0"/>
+                  <EmptySpace pref="78" max="32767" attributes="0"/>
+
               </Group>
           </Group>
         </DimensionLayout>
@@ -193,7 +207,9 @@
             <Component class="javax.swing.JList" name="jList1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="99" red="99" type="rgb"/>
+
+                  <Color blue="33" green="66" red="0" type="rgb"/>
+
                 </Property>
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                   <StringArray count="5">
@@ -244,6 +260,11 @@
         <Property name="text" type="java.lang.String" value="Sign Up"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSignUpActionPerformed"/>
+      </Events>
+
     </Component>
   </SubComponents>
 </Form>
