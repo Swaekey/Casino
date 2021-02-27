@@ -44,6 +44,7 @@ public class SignupPage extends javax.swing.JFrame {
         jButtonSubmit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(452, 550));
 
         jPanelHeader.setBackground(new java.awt.Color(0, 0, 0));
         jPanelHeader.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -75,12 +76,10 @@ public class SignupPage extends javax.swing.JFrame {
         jTextFieldName.setToolTipText("Name");
 
         jTextFieldEmail.setToolTipText("Email");
-        jTextFieldEmail.setPreferredSize(new java.awt.Dimension(7, 19));
 
         jTextFieldAge.setToolTipText("Email");
 
         jPasswordFieldPassword.setToolTipText("password");
-        jPasswordFieldPassword.setPreferredSize(new java.awt.Dimension(7, 19));
         jPasswordFieldPassword.setRequestFocusEnabled(false);
 
         jPasswordFieldPasswordConfirm.setToolTipText("password");
@@ -124,9 +123,9 @@ public class SignupPage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextFieldName)
-                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextFieldEmail)
                     .addComponent(jTextFieldAge, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                    .addComponent(jPasswordFieldPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPasswordFieldPassword)
                     .addComponent(jPasswordFieldPasswordConfirm)
                     .addComponent(jTextFieldUsername))
                 .addGap(63, 63, 63))
@@ -181,7 +180,7 @@ public class SignupPage extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(10, 10, 10)
                 .addComponent(jPanelBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
