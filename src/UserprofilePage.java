@@ -293,11 +293,11 @@ public class UserprofilePage extends javax.swing.JFrame {
 
     private void jButtonLeaderboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLeaderboardActionPerformed
         // TODO add your handling code here:
-//        LeaderboardPage leaderboardPage = new LeaderboardPage();
-//        leaderboardPage.setVisible(true);
-//        this.setVisible(false);
-//        this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
-//        this.dispose();
+        LeaderboardPage leaderboardPage = new LeaderboardPage();
+        leaderboardPage.setVisible(true);
+        this.setVisible(false);
+        this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
+        this.dispose();
     }//GEN-LAST:event_jButtonLeaderboardActionPerformed
 
     private void jButtonUpdateProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateProfileActionPerformed
