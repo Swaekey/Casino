@@ -20,7 +20,7 @@ public class Link {
      */
     public static void main(String[] args) {
         // Create a HTTP Connection.
-        String baseUrl = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1";
+        String baseUrl = "https://deckofcardsapi.com";
         String urlString = baseUrl;
         URL url;
         System.out.println("Marker 1");
