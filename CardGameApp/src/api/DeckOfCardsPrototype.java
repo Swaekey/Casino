@@ -18,6 +18,15 @@ public class DeckOfCardsPrototype {
         // TODO code application logic here
         DeckOfCardsAPI test = new DeckOfCardsAPI();
         test.newDeck();
+        System.out.println(test.getDeckRemaining());
+        test.halfDeck();
+        System.out.println(test.getDeckRemaining());
+        System.out.println("player1 = " + test.getPileRemaining("player1"));        
+        System.out.println("player2 = " + test.getPileRemaining("player2"));
+        test.addToPileFromPile("player1", "player2");
+        System.out.println("player1 = " + test.getPileRemaining("player1"));
+        System.out.println("player2 = " + test.getPileRemaining("player2"));
+        
     }
     
 }
