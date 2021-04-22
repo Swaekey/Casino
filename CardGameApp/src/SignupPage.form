@@ -108,28 +108,26 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabelAge" min="-2" pref="105" max="-2" attributes="0"/>
                       <Component id="jLabelEmail" min="-2" pref="105" max="-2" attributes="0"/>
                       <Component id="jLabelPassword" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                       <Component id="jLabelPasswordConfirm" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                       <Component id="jLabelUsername" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                       <Component id="jLabelName" min="-2" pref="105" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="80" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jTextFieldName" max="32767" attributes="0"/>
-                      <Component id="jTextFieldEmail" max="32767" attributes="0"/>
-                      <Component id="jTextFieldAge" alignment="0" pref="148" max="32767" attributes="0"/>
-                      <Component id="jPasswordFieldPassword" max="32767" attributes="0"/>
-                      <Component id="jPasswordFieldPasswordConfirm" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextFieldUsername" alignment="0" max="32767" attributes="0"/>
+                      <Component id="register_name" pref="148" max="32767" attributes="0"/>
+                      <Component id="register_email" max="32767" attributes="0"/>
+                      <Component id="register_password" max="32767" attributes="0"/>
+                      <Component id="register_passwordconfirm" alignment="0" max="32767" attributes="0"/>
+                      <Component id="register_user" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
                   <Component id="jButtonSubmit" min="-2" pref="93" max="-2" attributes="0"/>
-                  <EmptySpace pref="179" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -138,64 +136,54 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextFieldName" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="register_name" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="jLabelName" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextFieldUsername" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="register_user" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="jLabelUsername" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextFieldEmail" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="register_email" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="jLabelEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextFieldAge" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="jLabelAge" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jPasswordFieldPassword" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="jLabelPassword" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jPasswordFieldPasswordConfirm" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="jLabelPasswordConfirm" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="register_password" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="61" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabelPasswordConfirm" min="-2" max="-2" attributes="0"/>
+                      <Component id="register_passwordconfirm" min="-2" pref="27" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                   <Component id="jButtonSubmit" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                  <EmptySpace pref="87" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="jTextFieldName">
+        <Component class="javax.swing.JTextField" name="register_name">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Name"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldEmail">
+        <Component class="javax.swing.JTextField" name="register_email">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Email"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldAge">
-          <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="Email"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswordFieldPassword">
+        <Component class="javax.swing.JPasswordField" name="register_password">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="password"/>
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswordFieldPasswordConfirm">
+        <Component class="javax.swing.JPasswordField" name="register_passwordconfirm">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="password"/>
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
@@ -209,7 +197,7 @@
             <Property name="text" type="java.lang.String" value="Name"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldUsername">
+        <Component class="javax.swing.JTextField" name="register_user">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Email"/>
           </Properties>
@@ -228,14 +216,6 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Email"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelAge">
-          <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Age"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelPassword">

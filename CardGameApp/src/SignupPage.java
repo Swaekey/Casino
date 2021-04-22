@@ -1,5 +1,11 @@
 package views;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -31,16 +37,14 @@ public class SignupPage extends javax.swing.JFrame {
         jPanelHeader = new javax.swing.JPanel();
         jLabelLogo = new javax.swing.JLabel();
         jPanelBackground = new javax.swing.JPanel();
-        jTextFieldName = new javax.swing.JTextField();
-        jTextFieldEmail = new javax.swing.JTextField();
-        jTextFieldAge = new javax.swing.JTextField();
-        jPasswordFieldPassword = new javax.swing.JPasswordField();
-        jPasswordFieldPasswordConfirm = new javax.swing.JPasswordField();
+        register_name = new javax.swing.JTextField();
+        register_email = new javax.swing.JTextField();
+        register_password = new javax.swing.JPasswordField();
+        register_passwordconfirm = new javax.swing.JPasswordField();
         jLabelName = new javax.swing.JLabel();
-        jTextFieldUsername = new javax.swing.JTextField();
+        register_user = new javax.swing.JTextField();
         jLabelUsername = new javax.swing.JLabel();
         jLabelEmail = new javax.swing.JLabel();
-        jLabelAge = new javax.swing.JLabel();
         jLabelPassword = new javax.swing.JLabel();
         jLabelPasswordConfirm = new javax.swing.JLabel();
         jButtonSubmit = new javax.swing.JButton();
@@ -75,31 +79,26 @@ public class SignupPage extends javax.swing.JFrame {
         jPanelBackground.setBackground(new java.awt.Color(0, 102, 51));
         jPanelBackground.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jTextFieldName.setToolTipText("Name");
+        register_name.setToolTipText("Name");
 
-        jTextFieldEmail.setToolTipText("Email");
+        register_email.setToolTipText("Email");
 
-        jTextFieldAge.setToolTipText("Email");
+        register_password.setToolTipText("password");
+        register_password.setRequestFocusEnabled(false);
 
-        jPasswordFieldPassword.setToolTipText("password");
-        jPasswordFieldPassword.setRequestFocusEnabled(false);
-
-        jPasswordFieldPasswordConfirm.setToolTipText("password");
-        jPasswordFieldPasswordConfirm.setRequestFocusEnabled(false);
+        register_passwordconfirm.setToolTipText("password");
+        register_passwordconfirm.setRequestFocusEnabled(false);
 
         jLabelName.setForeground(new java.awt.Color(255, 255, 255));
         jLabelName.setText("Name");
 
-        jTextFieldUsername.setToolTipText("Email");
+        register_user.setToolTipText("Email");
 
         jLabelUsername.setForeground(new java.awt.Color(255, 255, 255));
         jLabelUsername.setText("Username");
 
         jLabelEmail.setForeground(new java.awt.Color(255, 255, 255));
         jLabelEmail.setText("Email");
-
-        jLabelAge.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelAge.setText("Age");
 
         jLabelPassword.setForeground(new java.awt.Color(255, 255, 255));
         jLabelPassword.setText("Password");
@@ -121,56 +120,50 @@ public class SignupPage extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackgroundLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelAge, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextFieldName)
-                    .addComponent(jTextFieldEmail)
-                    .addComponent(jTextFieldAge, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                    .addComponent(jPasswordFieldPassword)
-                    .addComponent(jPasswordFieldPasswordConfirm)
-                    .addComponent(jTextFieldUsername))
+                    .addComponent(register_name, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                    .addComponent(register_email)
+                    .addComponent(register_password)
+                    .addComponent(register_passwordconfirm)
+                    .addComponent(register_user))
                 .addGap(63, 63, 63))
             .addGroup(jPanelBackgroundLayout.createSequentialGroup()
-                .addGap(156, 156, 156)
+                .addGap(152, 152, 152)
                 .addComponent(jButtonSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelBackgroundLayout.setVerticalGroup(
             jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelBackgroundLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(register_name, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelName))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(register_user, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelUsername))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(register_email, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelEmail))
-                .addGap(16, 16, 16)
-                .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldAge, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelAge))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelPassword))
+                    .addComponent(jLabelPassword)
+                    .addComponent(register_password, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordFieldPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelPasswordConfirm))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelPasswordConfirm)
+                    .addComponent(register_passwordconfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
                 .addComponent(jButtonSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -201,6 +194,38 @@ public class SignupPage extends javax.swing.JFrame {
         this.setVisible(false);
         this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
         this.dispose();
+        
+        String name = register_name.getText();
+        String username = register_user.getText();
+        String password = register_password.getText();
+        String passwordconfirm = register_passwordconfirm.getText();
+        String email = register_email.getText();
+        
+        try{
+            File f = new File("warlogins.txt");
+            
+            if(!f.exists()){
+                f.createNewFile();
+                
+                FileWriter data = new FileWriter(f.getAbsoluteFile());
+                BufferedWriter bw = new BufferedWriter(data);
+                bw.write("Name: " + name + "Username: " + username + "Password: " + password + "PasswordConfirm: " + passwordconfirm + "Email" + email);
+                bw.close();
+                
+                JOptionPane.showMessageDialog(this, "Your Account has been created");
+                
+                 register_name.setText("");
+                 register_user.setText("");
+                 register_password.setText("");
+                 register_passwordconfirm.setText("");
+                 register_email.setText("");
+            } else {
+                JOptionPane.showMessageDialog(this, "Account already exists");
+                register_user.setText("");
+            }
+        } catch(IOException e){
+            
+        }
     }//GEN-LAST:event_jButtonSubmitActionPerformed
 
     /**
@@ -240,7 +265,6 @@ public class SignupPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonSubmit;
-    private javax.swing.JLabel jLabelAge;
     private javax.swing.JLabel jLabelEmail;
     private javax.swing.JLabel jLabelLogo;
     private javax.swing.JLabel jLabelName;
@@ -249,11 +273,10 @@ public class SignupPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelUsername;
     private javax.swing.JPanel jPanelBackground;
     private javax.swing.JPanel jPanelHeader;
-    private javax.swing.JPasswordField jPasswordFieldPassword;
-    private javax.swing.JPasswordField jPasswordFieldPasswordConfirm;
-    private javax.swing.JTextField jTextFieldAge;
-    private javax.swing.JTextField jTextFieldEmail;
-    private javax.swing.JTextField jTextFieldName;
-    private javax.swing.JTextField jTextFieldUsername;
+    private javax.swing.JTextField register_email;
+    private javax.swing.JTextField register_name;
+    private javax.swing.JPasswordField register_password;
+    private javax.swing.JPasswordField register_passwordconfirm;
+    private javax.swing.JTextField register_user;
     // End of variables declaration//GEN-END:variables
 }
