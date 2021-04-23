@@ -11,7 +11,6 @@ import javax.swing.JOptionPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Serena
@@ -188,40 +187,35 @@ public class SignupPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubmitActionPerformed
-        new LoginPage().setVisible(true);
-        
+
         String name = register_name.getText();
         String username = register_user.getText();
         String password = register_password.getText();
         String passwordconfirm = register_passwordconfirm.getText();
         String email = register_email.getText();
-        
-        try{
+
+        try {
             File f = new File("warlogins.txt");
-            
-            if(!f.exists()){
+
+            if (!f.exists()) {
                 f.createNewFile();
-                
+
                 FileWriter data = new FileWriter(f.getAbsoluteFile());
                 BufferedWriter bw = new BufferedWriter(data);
                 bw.write("Name: " + name + "Username: " + username + "Password: " + password + "PasswordConfirm: " + passwordconfirm + "Email" + email);
                 bw.close();
-                
+
                 JOptionPane.showMessageDialog(this, "Your Account has been created");
-                
-                 register_name.setText("");
-                 register_user.setText("");
-                 register_password.setText("");
-                 register_passwordconfirm.setText("");
-                 register_email.setText("");
+
             } else {
                 JOptionPane.showMessageDialog(this, "Account already exists");
-                register_user.setText("");
+
             }
-        } catch(IOException e){
-            
+        } catch (IOException e) {
+
         }
-         dispose();
+        new LoginPage().setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonSubmitActionPerformed
 
     private void register_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_register_passwordActionPerformed
