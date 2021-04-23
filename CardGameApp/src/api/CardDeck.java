@@ -25,7 +25,7 @@ public class CardDeck {
     protected static final String PLAYER_2 = "computer";
 
     //Creates new shuffled CardDeck of 52 cards and sets deckID
-    protected static void newDeck() {
+    public static void newDeck() {
         String callAction = "/new/shuffle/?deck_count=1";
         String urlString = BASE_URL + callAction;
         URL url;
@@ -96,7 +96,7 @@ public class CardDeck {
     }
 
     //draws card from CardDeck
-    protected static Cards drawCardFromDeck() {
+    public static Cards drawCardFromDeck() {
         String callAction = "/" + deckID + "/draw/?count=1";
         String urlString = BASE_URL + callAction;
         URL url;
@@ -246,8 +246,13 @@ public class CardDeck {
 
     }
 
+<<<<<<< Updated upstream
     //divides existing deck into two piles, player1 and PLAYER_2
     protected static void halfDeck() {
+=======
+    //divides exisiting deck into two piles, player1 and PLAYER_2
+    public static void halfDeck() {
+>>>>>>> Stashed changes
         int pileSize = getDeckRemaining() / 2;
         for (int i = pileSize; i > 0; i--) {
             addToPileFromDeck(player1);
