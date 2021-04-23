@@ -246,13 +246,8 @@ public class CardDeck {
 
     }
 
-<<<<<<< Updated upstream
-    //divides existing deck into two piles, player1 and PLAYER_2
-    protected static void halfDeck() {
-=======
     //divides exisiting deck into two piles, player1 and PLAYER_2
     public static void halfDeck() {
->>>>>>> Stashed changes
         int pileSize = getDeckRemaining() / 2;
         for (int i = pileSize; i > 0; i--) {
             addToPileFromDeck(player1);
