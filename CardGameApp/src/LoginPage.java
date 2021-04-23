@@ -118,6 +118,11 @@ public class LoginPage extends javax.swing.JFrame {
         jLabelPassword.setText("Password:");
 
         jButtonLogin.setText("Login");
+        jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLoginActionPerformed(evt);
+            }
+        });
 
         jButtonSignUp.setText("Sign Up");
         jButtonSignUp.setToolTipText("");
@@ -181,9 +186,15 @@ public class LoginPage extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         new SignupPage().setVisible(true);
-         dispose();
+        dispose();
 
     }//GEN-LAST:event_jButtonSignUpActionPerformed
+
+    private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
+        // TODO add your handling code here:
+        new GameplayPage().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButtonLoginActionPerformed
 
     /**
      * @param args the command line arguments

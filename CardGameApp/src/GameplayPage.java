@@ -5,7 +5,6 @@ package views;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Serena
@@ -263,7 +262,7 @@ public class GameplayPage extends javax.swing.JFrame {
 
     private void jButtonForfietActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonForfietActionPerformed
         // TODO add your handling code here:
-         dispose();
+        dispose();
     }//GEN-LAST:event_jButtonForfietActionPerformed
 
     /**
