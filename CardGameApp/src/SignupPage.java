@@ -188,11 +188,7 @@ public class SignupPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubmitActionPerformed
-        UserprofilePage userprofilePage = new UserprofilePage();
-        userprofilePage.setVisible(true);
-        this.setVisible(false);
-        this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
-        this.dispose();
+        new LoginPage().setVisible(true);
         
         String name = register_name.getText();
         String username = register_user.getText();
@@ -225,6 +221,7 @@ public class SignupPage extends javax.swing.JFrame {
         } catch(IOException e){
             
         }
+         dispose();
     }//GEN-LAST:event_jButtonSubmitActionPerformed
 
     private void register_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_register_passwordActionPerformed

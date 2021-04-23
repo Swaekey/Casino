@@ -1,6 +1,5 @@
 package views;
 
-
 import javax.swing.JFrame;
 
 /*
@@ -8,7 +7,6 @@ import javax.swing.JFrame;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Serena
@@ -22,7 +20,6 @@ public class LoginPage extends javax.swing.JFrame {
         initComponents();
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -182,12 +179,10 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void jButtonSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSignUpActionPerformed
         // TODO add your handling code here:
-        SignupPage signupPage = new SignupPage();
-        signupPage.setVisible(true);
-        this.setVisible(false);
-        this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
-        this.dispose();
-        
+
+        new SignupPage().setVisible(true);
+         dispose();
+
     }//GEN-LAST:event_jButtonSignUpActionPerformed
 
     /**
