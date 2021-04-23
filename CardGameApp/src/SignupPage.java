@@ -39,8 +39,6 @@ public class SignupPage extends javax.swing.JFrame {
         jPanelBackground = new javax.swing.JPanel();
         register_name = new javax.swing.JTextField();
         register_email = new javax.swing.JTextField();
-        register_password = new javax.swing.JPasswordField();
-        register_passwordconfirm = new javax.swing.JPasswordField();
         jLabelName = new javax.swing.JLabel();
         register_user = new javax.swing.JTextField();
         jLabelUsername = new javax.swing.JLabel();
@@ -48,9 +46,10 @@ public class SignupPage extends javax.swing.JFrame {
         jLabelPassword = new javax.swing.JLabel();
         jLabelPasswordConfirm = new javax.swing.JLabel();
         jButtonSubmit = new javax.swing.JButton();
+        register_password = new javax.swing.JPasswordField();
+        register_passwordconfirm = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(452, 550));
 
         jPanelHeader.setBackground(new java.awt.Color(0, 0, 0));
         jPanelHeader.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -83,12 +82,6 @@ public class SignupPage extends javax.swing.JFrame {
 
         register_email.setToolTipText("Email");
 
-        register_password.setToolTipText("password");
-        register_password.setRequestFocusEnabled(false);
-
-        register_passwordconfirm.setToolTipText("password");
-        register_passwordconfirm.setRequestFocusEnabled(false);
-
         jLabelName.setForeground(new java.awt.Color(255, 255, 255));
         jLabelName.setText("Name");
 
@@ -113,6 +106,12 @@ public class SignupPage extends javax.swing.JFrame {
             }
         });
 
+        register_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                register_passwordActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelBackgroundLayout = new javax.swing.GroupLayout(jPanelBackground);
         jPanelBackground.setLayout(jPanelBackgroundLayout);
         jPanelBackgroundLayout.setHorizontalGroup(
@@ -125,18 +124,18 @@ public class SignupPage extends javax.swing.JFrame {
                     .addComponent(jLabelPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(register_name, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
                     .addComponent(register_email)
+                    .addComponent(register_user)
                     .addComponent(register_password)
-                    .addComponent(register_passwordconfirm)
-                    .addComponent(register_user))
+                    .addComponent(register_passwordconfirm))
                 .addGap(63, 63, 63))
             .addGroup(jPanelBackgroundLayout.createSequentialGroup()
                 .addGap(152, 152, 152)
                 .addComponent(jButtonSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(183, Short.MAX_VALUE))
         );
         jPanelBackgroundLayout.setVerticalGroup(
             jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,16 +153,16 @@ public class SignupPage extends javax.swing.JFrame {
                     .addComponent(register_email, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelEmail))
                 .addGap(18, 18, 18)
-                .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelPassword)
                     .addComponent(register_password, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelPasswordConfirm)
-                    .addComponent(register_passwordconfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
+                    .addComponent(register_passwordconfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
                 .addComponent(jButtonSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addGap(94, 94, 94))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -227,6 +226,10 @@ public class SignupPage extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_jButtonSubmitActionPerformed
+
+    private void register_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_register_passwordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_register_passwordActionPerformed
 
     /**
      * @param args the command line arguments
