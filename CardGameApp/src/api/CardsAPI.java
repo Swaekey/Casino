@@ -6,15 +6,16 @@
  *          code ("2D", "AS", "0C", ect.), 
  *          image (.png file) 
  *          and value (2D = 2, AS = 14, 0C = 10, etc)
+ * These cards are created directly from the API
  */
 package api;
 
-public class Cards {
+public class CardsAPI {
     public String cardCode;
     public String cardImage;
     public int cardValue;
 
-    public Cards(String cardCode, String cardImage, int cardValue) {
+    public CardsAPI(String cardCode, String cardImage, int cardValue) {
         this.cardCode = cardCode;
         this.cardImage = cardImage;
         this.cardValue = cardValue;
@@ -61,11 +62,30 @@ public class Cards {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Cards other = (Cards) obj;
+        final CardsAPI other = (CardsAPI) obj;
         if (this.cardValue != other.cardValue) {
             return false;
         }
         return true;
+    }
+    
+    public int compareTo(CardsAPI card){
+        if (this.equals(card)){
+            return 0;
+        }
+        else if (this.getCardValue() > card.getCardValue()){
+            return 1;
+        }
+        else {
+            return -1;
+        }
+    }
+    
+    
+
+    @Override
+    public String toString() {
+        return "Cards{" + "cardCode=" + cardCode + ", cardImage=" + cardImage + ", cardValue=" + cardValue + '}';
     }
     
     
