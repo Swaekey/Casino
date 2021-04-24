@@ -5,7 +5,6 @@ package views;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Serena
@@ -45,7 +44,6 @@ public class GameplayPage extends javax.swing.JFrame {
         jLabelP2CardCount = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(452, 550));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(452, 550));
 
@@ -133,6 +131,11 @@ public class GameplayPage extends javax.swing.JFrame {
         jLabelPlayer3.setText("Player1");
 
         jButtonForfiet.setText("Forfiet");
+        jButtonForfiet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonForfietActionPerformed(evt);
+            }
+        });
 
         jLabelP1CardCount.setForeground(new java.awt.Color(255, 255, 255));
         jLabelP1CardCount.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -256,6 +259,11 @@ public class GameplayPage extends javax.swing.JFrame {
         this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_jButtonUserProfileActionPerformed
+
+    private void jButtonForfietActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonForfietActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jButtonForfietActionPerformed
 
     /**
      * @param args the command line arguments

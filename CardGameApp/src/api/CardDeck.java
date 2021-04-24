@@ -25,7 +25,7 @@ public class CardDeck {
     protected static final String PLAYER_2 = "computer";
 
     //Creates new shuffled CardDeck of 52 cards and sets deckID
-    protected static void newDeck() {
+    public static void newDeck() {
         String callAction = "/new/shuffle/?deck_count=1";
         String urlString = BASE_URL + callAction;
         URL url;
@@ -96,7 +96,7 @@ public class CardDeck {
     }
 
     //draws card from CardDeck
-    protected static Cards drawCardFromDeck() {
+    public static Cards drawCardFromDeck() {
         String callAction = "/" + deckID + "/draw/?count=1";
         String urlString = BASE_URL + callAction;
         URL url;
@@ -106,11 +106,11 @@ public class CardDeck {
             url = new URL(urlString);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
-
             // Examine the response code.
             int status = con.getResponseCode();
+            String message = con.getResponseMessage();
             if (status != 200) {
-                System.out.printf("Error: Could not load card: " + status);
+                System.out.printf("Error: Could not load card: " + status + " " + message);
             } else {
                 // Parsing input stream into a text string.
                 BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -164,8 +164,9 @@ public class CardDeck {
             System.out.println("Error: " + ex);
             return drawnCard;
         }
-        return null;
+        return drawCardFromDeck();
     }
+    // 4-22-21
 
     //returns number of cards remaining in CardDeck
     public static int getDeckRemaining() {
@@ -246,15 +247,17 @@ public class CardDeck {
     }
 
     //divides exisiting deck into two piles, player1 and PLAYER_2
-    protected static void halfDeck() {
+    public static void halfDeck() {
         int pileSize = getDeckRemaining() / 2;
-
         for (int i = pileSize; i > 0; i--) {
             addToPileFromDeck(player1);
             addToPileFromDeck(PLAYER_2);
         }
-
+        if (getDeckRemaining() == 1){
+            addToPileFromDeck(PLAYER_2);
+        }
     }
+    // 4-22-21
 
     //returns number of cards remaining in pileName
     public static int getPileRemaining(String pileName) {
