@@ -3,9 +3,6 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[452, 550]"/>
-    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -114,20 +111,20 @@
                       <Component id="jLabelUsername" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                       <Component id="jLabelName" min="-2" pref="105" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="80" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="register_name" pref="148" max="32767" attributes="0"/>
                       <Component id="register_email" max="32767" attributes="0"/>
-                      <Component id="register_password" max="32767" attributes="0"/>
-                      <Component id="register_passwordconfirm" alignment="0" max="32767" attributes="0"/>
                       <Component id="register_user" alignment="0" max="32767" attributes="0"/>
+                      <Component id="register_password" max="32767" attributes="0"/>
+                      <Component id="register_passwordconfirm" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
                   <Component id="jButtonSubmit" min="-2" pref="93" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="183" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -150,18 +147,18 @@
                       <Component id="jLabelEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="register_password" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabelPassword" min="-2" max="-2" attributes="0"/>
+                      <Component id="register_password" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabelPasswordConfirm" min="-2" max="-2" attributes="0"/>
-                      <Component id="register_passwordconfirm" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="register_passwordconfirm" min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   <Component id="jButtonSubmit" min="-2" pref="43" max="-2" attributes="0"/>
-                  <EmptySpace pref="87" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -175,18 +172,6 @@
         <Component class="javax.swing.JTextField" name="register_email">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Email"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JPasswordField" name="register_password">
-          <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="password"/>
-            <Property name="requestFocusEnabled" type="boolean" value="false"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JPasswordField" name="register_passwordconfirm">
-          <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="password"/>
-            <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelName">
@@ -241,6 +226,13 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSubmitActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="register_password">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="register_passwordActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="register_passwordconfirm">
         </Component>
       </SubComponents>
     </Container>
