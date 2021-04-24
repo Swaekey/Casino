@@ -21,12 +21,48 @@ public class CardDeckAPI {
 
     private static final String BASE_URL = "https://deckofcardsapi.com/api/deck";
     private static String deckID;
-    private static String player1;
-    public static final String PLAYER_2 = "computer";
 
     //Creates new shuffled CardDeck of 52 cards and sets deckID
     public static void newDeck() {
         String callAction = "/new/shuffle/?deck_count=1";
+        String urlString = BASE_URL + callAction;
+        URL url;
+        try {
+            // Make the connection.
+            url = new URL(urlString);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+
+            // Examine the response code.
+            int status = con.getResponseCode();
+            if (status != 200) {
+                System.out.printf("Error: Could not load deck: " + status);
+            } else {
+                // Parsing input stream into a text string.
+                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                String inputLine;
+                StringBuffer content = new StringBuffer();
+                while ((inputLine = in.readLine()) != null) {
+                    content.append(inputLine);
+                }
+                // Close the connections.
+                in.close();
+                con.disconnect();
+                // Parse that object into a usable Java JSON object.
+                JSONObject obj = new JSONObject(content.toString());
+                // set deck id
+                deckID = obj.getString("deck_id");
+            }
+        } catch (Exception ex) {
+            System.out.println("Error: " + ex);
+            return;
+        }
+
+    }
+    
+    //Creates new shuffled CardDeck made up of numDecks decks and sets deckID
+    public static void newDeck(int numDecks) {
+        String callAction = "/new/shuffle/?deck_count=" + numDecks;
         String urlString = BASE_URL + callAction;
         URL url;
         try {
@@ -246,21 +282,6 @@ public class CardDeckAPI {
 
     }
 
-    //divides existing deck into two piles, player1 and PLAYER_2
-    public static void halfDeck() {
-        int pileSize = getDeckRemaining() / 2;
-
-        for (int i = pileSize; i > 0; i--) {
-            addToPileFromDeck(player1);
-            addToPileFromDeck(PLAYER_2);
-        }
-        
-        if (getDeckRemaining() == 1){
-            addToPileFromDeck(PLAYER_2);
-        }
-
-    }
-
     //returns number of cards remaining in pileName
     public static int getPileRemaining(String pileName) {
         String callAction = "/" + deckID + "/pile/" + pileName + "/list";
@@ -418,9 +439,5 @@ public class CardDeckAPI {
         return cardInfo;
     }
 
-    //name player1
-    public static void setPlayer1(String player1) {
-        CardDeckAPI.player1 = player1;
-    }
 
 }

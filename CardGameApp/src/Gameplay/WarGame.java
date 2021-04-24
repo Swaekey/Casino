@@ -1,50 +1,54 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The Four Lokos
+ * Created by: Serena Herter
+ * Created on: 4/21/2021
+ * This class creates a new game of war between two players
  */
 package Gameplay;
 
 import CardDeck.CardDeck;
-import CardDeck.Cards;
+
 import java.util.ArrayList;
 
 public class WarGame {
     CardDeck deck;
-    String playerUserName;
+    String player1;
+    String player2 = "computer";
     String gameWinner = "";
     ArrayList<GameRound> rounds = new ArrayList<>();
-    final String COMPUTER_USER_NAME = "computer";
     final String WAR_PILE = "war";
-    int playerScore;
-    int computerScore;
+    int player1Score;
+    int player2Score;
     
 
-    public WarGame(String playerUserName) {
-        this.playerUserName = playerUserName;
+    public WarGame(String player1) {
+        this.player1 = player1;
         this.deck = new CardDeck();
+        deck.halfDeck(player1, player2);
         
-        deck.newDeck();        
-        deck.setPlayer1(playerUserName);
-        deck.halfDeck();
-        
-        this.playerScore = deck.getPileRemaining(playerUserName);
-        this.computerScore = deck.getPileRemaining(COMPUTER_USER_NAME);
+        this.player1Score = deck.getPileRemaining(player1);
+        this.player2Score = deck.getPileRemaining(player2);
         
     }
     
+    public WarGame(String player1, String player2) {
+        this.player1 = player1;
+        this.player2 = player2;
+        deck = new CardDeck();
+        deck.halfDeck(player1, player2);        
+        this.player1Score = deck.getPileRemaining(player1);
+        this.player2Score = deck.getPileRemaining(player2);
+        
+    }
     
     public String newGameRound(int roundNum){
         
-        GameRound gameRound = new GameRound(playerUserName, roundNum);        
+        GameRound gameRound = new GameRound(player1, roundNum);        
         rounds.add(gameRound);
         gameRound.drawCards();
         gameRound.compareCards();
-        if (!"tie".equals(gameRound.getGameRoundWinner())){
-        gameRound.cardsToWinner(gameRound.getGameRoundWinner());
-        }
-        setPlayerScore(deck.getPileRemaining(playerUserName));
-        setComputerScore(deck.getPileRemaining(COMPUTER_USER_NAME));
+        setPlayer1Score(deck.getPileRemaining(player1));
+        setPlayer2Score(deck.getPileRemaining(player2));
         checkWinner();
         if ("".equals(gameWinner)){
         return gameRound.getGameRoundWinner();
@@ -54,16 +58,14 @@ public class WarGame {
     
     public String newGameRoundAfterTie(int roundNum){
         
-        GameRound gameRound = new GameRound(playerUserName, roundNum);        
+        GameRound gameRound = new GameRound(player1, roundNum);        
         rounds.add(gameRound);
         gameRound.tie();
         gameRound.drawCards();
         gameRound.compareCards();
-        if (!"tie".equals(gameRound.getGameRoundWinner())){
-        gameRound.cardsToWinner(gameRound.getGameRoundWinner());
-        }
-        setPlayerScore(deck.getPileRemaining(playerUserName));
-        setComputerScore(deck.getPileRemaining(COMPUTER_USER_NAME));
+        setPlayer1Score(deck.getPileRemaining(player1));
+        setPlayer2Score(deck.getPileRemaining(player2));
+        checkWinner();
         if ("".equals(gameWinner)){
         return gameRound.getGameRoundWinner();
         }
@@ -71,14 +73,14 @@ public class WarGame {
     }
     
     
-    public String getPlayerCardImageFromRound(int roundNum){
+    public String getPlayer1CardImageFromRound(int roundNum){
         GameRound gameRound = rounds.get(roundNum);
-        return gameRound.getPlayerCardImage();
+        return gameRound.getPlayer1CardImage();
     }
     
-    public String getComputerCardImageFromRound(int roundNum){
+    public String getPlayer2CardImageFromRound(int roundNum){
         GameRound gameRound = rounds.get(roundNum);
-        return gameRound.getComputerCardImage();
+        return gameRound.getPlayer2CardImage();
     }
     
     public String getWinnerFromRound(int roundNum){
@@ -88,29 +90,29 @@ public class WarGame {
     
     
     public void checkWinner(){
-        if (getPlayerScore() == 0){
-            setGameWinner(COMPUTER_USER_NAME);
+        if (getPlayer1Score() == 0){
+            setGameWinner(player2);
         }
-        if (getComputerScore() == 0){
-            setGameWinner(playerUserName);
+        if (getPlayer2Score() == 0){
+            setGameWinner(player1);
         }
     }
     
 
-    public int getPlayerScore() {
-        return playerScore;
+    public int getPlayer1Score() {
+        return player1Score;
     }
 
-    public int getComputerScore() {
-        return computerScore;
+    public int getPlayer2Score() {
+        return player2Score;
     }
 
-    public void setPlayerScore(int playerScore) {
-        this.playerScore = playerScore;
+    public void setPlayer1Score(int player1Score) {
+        this.player1Score = player1Score;
     }
 
-    public void setComputerScore(int computerScore) {
-        this.computerScore = computerScore;
+    public void setPlayer2Score(int player2Score) {
+        this.player2Score = player2Score;
     }
 
     public String getGameWinner() {
@@ -119,9 +121,23 @@ public class WarGame {
 
     public void setGameWinner(String gameWinner) {
         this.gameWinner = gameWinner;
+    }  
+
+    public String getPlayer1() {
+        return player1;
     }
-    
-    
+
+    public void setPlayer1(String player1) {
+        this.player1 = player1;
+    }
+
+    public String getPlayer2() {
+        return player2;
+    }
+
+    public void setPlayer2(String player2) {
+        this.player2 = player2;
+    }
     
     
     
