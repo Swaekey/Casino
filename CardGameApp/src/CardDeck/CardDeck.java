@@ -13,9 +13,10 @@ package CardDeck;
  * @author Serena
  */
 public class CardDeck {
-    private static String deckID;
-    private static String player1;
-    protected static final String PLAYER_2 = "computer";
+
+    public CardDeck() {
+        newDeck();
+    }    
     
     /**
      * creates new shuffled deck
@@ -59,8 +60,33 @@ public class CardDeck {
     /**
      * splits the deck into two equal piles
      */
-    public static void halfDeck(){
-        api.CardDeckAPI.halfDeck();
+    public static void halfDeck(String pile1, String pile2){
+        int pileSize = getDeckRemaining() / 2;
+
+        for (int i = pileSize; i > 0; i--) {
+            api.CardDeckAPI.addToPileFromDeck(pile1);
+            api.CardDeckAPI.addToPileFromDeck(pile2);
+        }
+        
+        if (getDeckRemaining() == 1){
+            addToPileFromDeck(pile2);
+        }
+    }
+    
+    public static void dealDeck(String ... args){
+        int pileSize = getDeckRemaining()/ args.length;
+        for (int i = pileSize; i > 0; i--) {
+            for (int j = args.length; j > 0; j--){
+                api.CardDeckAPI.addToPileFromDeck(args[j-1]);
+            }
+        }
+        if (getDeckRemaining() != 0){
+           for (int i = getDeckRemaining(); i > 0; i--) {
+                for (int j = getDeckRemaining(); j > 0; j--){
+                    api.CardDeckAPI.addToPileFromDeck(args[j]);
+                }
+           } 
+        }
     }
     
     /**
@@ -87,17 +113,9 @@ public class CardDeck {
      * @param pileTo
      * @return card moved information
      */
-    public static Cards addToPileFromPile(String pileFrom, String pileTo){
+    public Cards addToPileFromPile(String pileFrom, String pileTo){
         return new Cards( api.CardDeckAPI.addToPileFromPile(pileFrom, pileTo));
     }
-    
-    public static void setPlayer1(String player1){
-        api.CardDeckAPI.setPlayer1(player1);
-    }
-    
-    
-    
-    
     
     
 }
