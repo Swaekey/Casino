@@ -7,6 +7,7 @@
 package Gameplay;
 
 import CardDeck.CardDeck;
+import CardDeck.Cards;
 
 import java.util.ArrayList;
 
@@ -14,7 +15,10 @@ public class WarGame {
     CardDeck deck;
     String player1;
     String player2 = "computer";
+    Cards player1Card;
+    Cards player2Card;
     String gameWinner = "";
+    String gameRoundWinner = "";
     ArrayList<GameRound> rounds = new ArrayList<>();
     final String WAR_PILE = "war";
     int player1Score;
@@ -43,46 +47,113 @@ public class WarGame {
     
     public String newGameRound(int roundNum){
         
-        GameRound gameRound = new GameRound(player1, roundNum);        
+        GameRound gameRound = new GameRound(roundNum);        
         rounds.add(gameRound);
-        gameRound.drawCards();
-        System.out.println(deck.getPileRemaining(WAR_PILE));
-        gameRound.compareCards();
+        drawCards();
+        //System.out.println(deck.getPileRemaining(WAR_PILE));
+        compareCards();
         checkWinner();
+        gameRound.setPlayer1Card(player1Card);
+        gameRound.setPlayer2Card(player2Card);
+        gameRound.setGameRoundWinner(gameRoundWinner);
         setPlayer1Score(deck.getPileRemaining(player1));
         setPlayer2Score(deck.getPileRemaining(player2));
-        
+        rounds.add(gameRound);
         if ("".equals(gameWinner)){
-        return gameRound.getGameRoundWinner();
+        return getGameRoundWinner();
         }
         return getGameWinner();
     }
     
     public String newGameRoundAfterTie(int roundNum){
         
-        GameRound gameRound = new GameRound(player1, roundNum);        
-        rounds.add(gameRound);
-        gameRound.tie();
-        gameRound.drawCards();
-        gameRound.compareCards();
+        GameRound gameRound = new GameRound(roundNum);        
+        tie();
+        drawCards();
+        //System.out.println(deck.getPileRemaining(WAR_PILE));
+        compareCards();
+        checkWinner();
+        gameRound.setPlayer1Card(player1Card);
+        gameRound.setPlayer2Card(player2Card);
+        gameRound.setGameRoundWinner(gameRoundWinner);
         setPlayer1Score(deck.getPileRemaining(player1));
         setPlayer2Score(deck.getPileRemaining(player2));
-        checkWinner();
+        rounds.add(gameRound);
         if ("".equals(gameWinner)){
-        return gameRound.getGameRoundWinner();
+        return getGameRoundWinner();
         }
-        return gameWinner;
+        return getGameWinner();
+    }
+    
+    public void drawCards(){
+        player1Card = deck.addToPileFromPile(player1, WAR_PILE);
+        player2Card = deck.addToPileFromPile(player2, WAR_PILE); 
+    }
+    
+    public Cards compareCards(){       
+        
+        switch (player1Card.compareTo(player2Card)) {
+            case 0:
+                gameRoundWinner = "tie";
+                return player1Card;                
+            case 1:
+                gameRoundWinner = player1;
+                cardsToWinner();
+                return player1Card;
+            default:
+                gameRoundWinner = player2;
+                cardsToWinner();
+                return player2Card;
+        }
+    }
+    
+    
+    public void cardsToWinner(){
+    for (int i = CardDeck.getPileRemaining(WAR_PILE); i > 0; i--){
+            deck.addToPileFromPile(WAR_PILE, gameRoundWinner);
+            //System.out.println("added card to " + gameRoundWinner);
+        }
+            
+    }
+    
+    public void tie(){
+        if (player1Score >= 4 && player2Score >= 4){
+            for (int i = 0; i < 3; i ++){
+                     deck.addToPileFromPile(player1, WAR_PILE);
+                     deck.addToPileFromPile(player2, WAR_PILE);
+                }
+        }
+        else if (player1Score >= 4){
+            for (int i = 0; i < 3; i ++){
+                     deck.addToPileFromPile(player1, WAR_PILE);                    
+                }
+            for (int i = 0; i < player1Score - 1; i ++){
+                     deck.addToPileFromPile(player2, WAR_PILE);                    
+                }
+        }
+        else {
+            for (int i = 0; i < 3; i ++){
+                     deck.addToPileFromPile(player2, WAR_PILE);                    
+                }
+            for (int i = 0; i < player1Score - 1; i ++){
+                     deck.addToPileFromPile(player1, WAR_PILE);                    
+                }
+        }
+    }
+
+    public String getGameRoundWinner() {
+        return gameRoundWinner + " has won the round!";
     }
     
     
     public String getPlayer1CardImageFromRound(int roundNum){
         GameRound gameRound = rounds.get(roundNum);
-        return gameRound.getPlayer1CardImage();
+        return gameRound.getPlayer1Card().getCardImage();
     }
     
     public String getPlayer2CardImageFromRound(int roundNum){
         GameRound gameRound = rounds.get(roundNum);
-        return gameRound.getPlayer2CardImage();
+        return gameRound.getPlayer2Card().getCardImage();
     }
     
     public String getWinnerFromRound(int roundNum){

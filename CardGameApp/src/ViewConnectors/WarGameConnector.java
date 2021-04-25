@@ -17,7 +17,7 @@ import javax.swing.ImageIcon;
 
 public class WarGameConnector {
     
-    int numRounds = 0;
+    static int numRounds = 0;
     WarGame newGame;
     String player = UserDataConnector.Username;
     
@@ -31,6 +31,7 @@ public class WarGameConnector {
     
     //newRound
     public void newRound(){
+        
         if (numRounds > 0 && "tie".equals(newGame.getWinnerFromRound(numRounds - 1))){
             newGame.newGameRoundAfterTie(numRounds);
         }
@@ -41,15 +42,24 @@ public class WarGameConnector {
     }
     
     //update Player1Image
-    public Icon player1Image() throws MalformedURLException, IOException{
+    public Icon player1Image() throws MalformedURLException, IOException{        
         URL url = new URL(newGame.getPlayer1CardImageFromRound(numRounds));
         Image image = ImageIO.read(url);
         ImageIcon icon = new ImageIcon(image);
         return icon;
     }
     
+    public void p1(){
+        System.out.println(newGame.getPlayer1CardImageFromRound(numRounds));
+    }
+    
+    public void p2(){
+        System.out.println(newGame.getPlayer2CardImageFromRound(numRounds));
+    }
+    
     //update Player2Image
     public Icon player2Image() throws MalformedURLException, IOException{
+        
         URL url = new URL(newGame.getPlayer2CardImageFromRound(numRounds));
         Image image = ImageIO.read(url);
         ImageIcon icon = new ImageIcon(image);
@@ -63,12 +73,12 @@ public class WarGameConnector {
     
     //updatePlayer2Score
     public String player2Score(){
-        return Integer.toString(newGame.getPlayer1Score());
+        return Integer.toString(newGame.getPlayer2Score());
     }
     
     //WinnerMessage
     public String winnerMessage(){
-        return newGame.getGameWinner();
+        return newGame.getGameRoundWinner();
     }
     
 }
