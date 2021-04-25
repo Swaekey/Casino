@@ -1,6 +1,6 @@
 /*
  * The Four Lokos
- * Created by: Serena Herter
+ * Created by: Serena Herter, Keshawn Posey, Srushti Honnnenahalli
  * Created on: 4/21/2021
  * This class creates a new game round in a game of war between two players
  */
@@ -24,8 +24,14 @@ public class GameRound extends WarGame {
     
     
     public void drawCards(){
-        player1Card = deck.addToPileFromPile(player1, WAR_PILE);
-        player2Card = deck.addToPileFromPile(player2, WAR_PILE);        
+        System.out.println("drawstart");
+        System.out.println("p1"+ super.deck.getPileRemaining(player1));
+        System.out.println("p2"+ super.deck.getPileRemaining(player2));
+        player1Card = super.deck.addToPileFromPile(player1, super.WAR_PILE);
+        player2Card = super.deck.addToPileFromPile(player2, super.WAR_PILE); 
+        System.out.println("p1"+ super.deck.getPileRemaining(player1));
+        System.out.println("p2"+ super.deck.getPileRemaining(player2));
+        System.out.println("drawstop");
     }
     
     public Cards compareCards(){       
@@ -45,9 +51,9 @@ public class GameRound extends WarGame {
         }
     }
     
-    //NOT WORKING!!!
+    
     public void cardsToWinner(){
-        for (int i = 0; i <= CardDeck.getPileRemaining(WAR_PILE); i++){
+    for (int i = CardDeck.getPileRemaining(WAR_PILE); i > 0; i--){
             deck.addToPileFromPile(WAR_PILE, gameRoundWinner);
             System.out.println("added card to " + gameRoundWinner);
         }
@@ -57,24 +63,24 @@ public class GameRound extends WarGame {
     public void tie(){
         if (player1Score >= 4 && player2Score >= 4){
             for (int i = 0; i < 3; i ++){
-                    deck.addToPileFromPile(player1, WAR_PILE);
-                    deck.addToPileFromPile(player2, WAR_PILE);
+                    super.deck.addToPileFromPile(player1, WAR_PILE);
+                    super.deck.addToPileFromPile(player2, WAR_PILE);
                 }
         }
         else if (player1Score >= 4){
             for (int i = 0; i < 3; i ++){
-                    deck.addToPileFromPile(player1, WAR_PILE);                    
+                    super.deck.addToPileFromPile(player1, WAR_PILE);                    
                 }
             for (int i = 0; i < player1Score - 1; i ++){
-                    deck.addToPileFromPile(player2, WAR_PILE);                    
+                    super.deck.addToPileFromPile(player2, WAR_PILE);                    
                 }
         }
         else {
             for (int i = 0; i < 3; i ++){
-                    deck.addToPileFromPile(player2, WAR_PILE);                    
+                    super.deck.addToPileFromPile(player2, WAR_PILE);                    
                 }
             for (int i = 0; i < player1Score - 1; i ++){
-                    deck.addToPileFromPile(player1, WAR_PILE);                    
+                    super.deck.addToPileFromPile(player1, WAR_PILE);                    
                 }
         }
     }

@@ -34,15 +34,12 @@ public class CardDeckProtoype {
         System.out.println("player1: " + test.getPileRemaining("player1"));
         System.out.println("player2: " + test.getPileRemaining("player2"));
         System.out.println("player3: " + test.getPileRemaining("player3"));
-        System.out.println(test.addToPileFromPile("player2", "player1").toString());
-        System.out.println("player1: " + test.getPileRemaining("player1"));
-        System.out.println("player2: " + test.getPileRemaining("player2"));
-        System.out.println("player3: " + test.getPileRemaining("player3"));
-        System.out.println(test.addToPileFromPile("player2", "player1").toString());
-        System.out.println("player1: " + test.getPileRemaining("player1"));
-        System.out.println("player2: " + test.getPileRemaining("player2"));
-        System.out.println("player3: " + test.getPileRemaining("player3"));
-        System.out.println(test.addToPileFromPile("player2", "player1").toString());
+        
+        for (int i = CardDeck.getPileRemaining("player3"); i > 0; i--){
+            test.addToPileFromPile("player3", "player1");
+            System.out.println("added card to " + "player1");
+        }
+        
         System.out.println("player1: " + test.getPileRemaining("player1"));
         System.out.println("player2: " + test.getPileRemaining("player2"));
         System.out.println("player3: " + test.getPileRemaining("player3"));

@@ -46,10 +46,12 @@ public class WarGame {
         GameRound gameRound = new GameRound(player1, roundNum);        
         rounds.add(gameRound);
         gameRound.drawCards();
+        System.out.println(deck.getPileRemaining(WAR_PILE));
         gameRound.compareCards();
+        checkWinner();
         setPlayer1Score(deck.getPileRemaining(player1));
         setPlayer2Score(deck.getPileRemaining(player2));
-        checkWinner();
+        
         if ("".equals(gameWinner)){
         return gameRound.getGameRoundWinner();
         }
@@ -137,6 +139,10 @@ public class WarGame {
 
     public void setPlayer2(String player2) {
         this.player2 = player2;
+    }
+
+    public int getWAR_PILE() {
+        return deck.getPileRemaining(WAR_PILE);
     }
     
     
