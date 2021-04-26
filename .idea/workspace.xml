@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f2031c29-4768-49f3-9850-6837aed9fa35" name="Default Changelist" comment="4-22-21 methods updated">
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/CardDeck/CardDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/CardDeck/CardDeck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/CardDeck/CardDeckProtoype.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/CardDeck/CardDeckProtoype.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/CardDeck/Cards.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/CardDeck/Cards.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/GamePlay/WarGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/GamePlay/WarGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/Gameplay/GameRound.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/Gameplay/GameRound.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/Gameplay/WarGameProtype.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/Gameplay/WarGameProtype.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/LoginPage.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/SignupPage.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/UserDataBase/UserTranslator.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/UserDataBase/UserTranslator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/UserDataBase/UserTranslatorProtoype.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/UserDataBase/UserTranslatorProtoype.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/View/CardGameAppUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/ViewConnectors/ConnectorPrototype.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/ViewConnectors/ConnectorPrototype.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/ViewConnectors/UserDataConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/ViewConnectors/UserDataConnector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/ViewConnectors/WarGameConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/ViewConnectors/WarGameConnector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/api/CardDeckAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/api/CardDeckAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/api/CardsAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/api/CardsAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/api/DeckOfCardsPrototype.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/api/DeckOfCardsPrototype.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/build/classes/views/CardGameAppUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/views/LoginPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/build/classes/views/SignupPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CardGameApp/src/ViewConnectors/UserDataConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/CardGameApp/src/ViewConnectors/UserDataConnector.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1rYH1hPzubFCFNUMWHgKPTEEnnN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f2031c29-4768-49f3-9850-6837aed9fa35" name="Default Changelist" comment="" />
+      <created>1619145890216</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619145890216</updated>
+      <workItem from="1619145893202" duration="637000" />
+      <workItem from="1619146821556" duration="985000" />
+      <workItem from="1619330266232" duration="56000" />
+      <workItem from="1619379747334" duration="836000" />
+      <workItem from="1619382698397" duration="820000" />
+      <workItem from="1619413972050" duration="1828000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="4-22-21 methods updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="4-22-21 methods updated" />
+  </component>
+</project>
