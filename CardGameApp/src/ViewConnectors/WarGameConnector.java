@@ -19,7 +19,7 @@ public class WarGameConnector {
 
     static int numRounds = 0;
     WarGame newGame;
-    String player = UserDataConnector.Username;
+    static String player = UserDataConnector.getUsername();
 
     //startNewGame
     public WarGame startNewGame() {

@@ -17,15 +17,23 @@ public class UserTranslatorProtoype {
     public static void main(String[] args) {
         UserTranslator userDB = new UserTranslator();
         userDB.createFolder();
-        userDB.readFile(); 
+        userDB.readFile();
         userDB.checkLines();
-        userDB.addUserData("Serena Herter", "s_wish", "serena@email.com", "puppy21");
-        userDB.checkLines();
-        userDB.addUserData("Gwen", "Admin", "admin@email.com", "password123");
-        userDB.checkLines();
-        userDB.addUserData("peter", "cardPlayer", "peter.33@email.com", "1234");
-        userDB.validateUserData("s_wish", "puppy21");
-        userDB.validateUserData("Admin", "password123");
+        
+        //userDB.addUserData("Serena Herter", "s_wish", "serena@email.com", "puppy21");
+        
+        //userDB.addUserData("Gwen", "Admin", "admin@email.com", "password123");
+        
+        //userDB.addUserData("peter", "cardPlayer", "peter.33@email", "1234");
+        //userDB.addUserData("peter", "cardPlayer", "peter.33@email.com", "1234");
+        //userDB.validateUserData("s_wish", "puppy21");
+        //userDB.validateUserDataLogic("s_wish", "puppy21");
+        //userDB.validateUserDataLogic("Admin", "password123");
+        System.out.println(userDB.isUniqueUsername("Admin"));
+        System.out.println(userDB.isUniqueUsername("admin"));
+        System.out.println(userDB.getUserByUsername("Admin"));
+        System.out.println(userDB.getUserByUsername("admin"));
+        userDB.addUserData("Maria", "PuddleWart", "m.jones@email.com", "00");
         
     }
     

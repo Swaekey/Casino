@@ -1,6 +1,6 @@
 /*
  * The Four Lokos
- * Created by: Alana Traylor
+ * Created by: Alana Traylor, Serena Herter
  * Created on: 4/26/21
  * This class connects the UserTranslator class to the view
  */
@@ -11,7 +11,8 @@ import java.util.Date;
 
 public class UserDataConnector extends UserTranslator {
 
-    public static String Name, Username, Email, Password;
+    public static String Name, Email, Password;
+    static String Username = "player";
     public Date date;
     public int GamesPlayed, GamesWon;
 
@@ -23,6 +24,10 @@ public class UserDataConnector extends UserTranslator {
         this.GamesWon = GamesWon;
 
     }
+    
+    public void addData(){
+        super.addUserData(Name, Username, Email, Password);
+    }
 
     public String getName() {
         return Name;
@@ -32,7 +37,7 @@ public class UserDataConnector extends UserTranslator {
         this.Name = Name;
     }
 
-    public String getUsername() {
+    public static String getUsername() {
         return Username;
     }
 
