@@ -9,100 +9,78 @@ package ViewConnectors;
 import java.util.Date;
 
 public class UserDataConnector {
+
     static String UserID, Name, Username, Email, Password;
     static Date date;
     static int GamesPlayed, GamesWon;
 
-    public UserDataConnector(String userID, String name, String username, String email, String password, Date date, int gamesPlayed, int gamesWon) {
-        UserID = userID;
-        Name = name;
-        Username = username;
-        Email = email;
-        Password = password;
-        this.date = date;
-        GamesPlayed = gamesPlayed;
-        GamesWon = gamesWon;
+    public UserDataConnector() {
     }
 
-    //get and set UserID
-
-    public String getUserID() {
+    public static String getUserID() {
         return UserID;
     }
 
-    public void setUserID(String userID) {
-        UserID = userID;
+    public static void setUserID(String UserID) {
+        UserDataConnector.UserID = UserID;
     }
 
-    //get snd set Name
-
-    public String getName() {
+    public static String getName() {
         return Name;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public static void setName(String Name) {
+        UserDataConnector.Name = Name;
     }
 
-    //get and set UserName
-
-    public String getUsername() {
+    public static String getUsername() {
         return Username;
     }
 
-    public void setUsername(String username) {
-        Username = username;
+    public static void setUsername(String Username) {
+        UserDataConnector.Username = Username;
     }
 
-    //get and set Email
-
-    public String getEmail() {
+    public static String getEmail() {
         return Email;
     }
 
-    public void setEmail(String email) {
-        Email = email;
+    public static void setEmail(String Email) {
+        UserDataConnector.Email = Email;
     }
 
-    //get and set Password
-
-    public String getPassword() {
+    public static String getPassword() {
         return Password;
     }
 
-    public void setPassword(String password) {
-        Password = password;
+    public static void setPassword(String Password) {
+        UserDataConnector.Password = Password;
     }
 
-    //get and set CreatedDate
-
-    public Date getDate() {
+    public static Date getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public static void setDate(Date date) {
+        UserDataConnector.date = date;
     }
 
-    //get and set GamesPlayed
-
-    public int getGamesPlayed() {
+    public static int getGamesPlayed() {
         return GamesPlayed;
     }
 
-    public void setGamesPlayed(int gamesPlayed) {
-        GamesPlayed = gamesPlayed;
+    public static void setGamesPlayed(int GamesPlayed) {
+        UserDataConnector.GamesPlayed = GamesPlayed;
     }
 
-    //get and set GamesWon
-
-    public int getGamesWon() {
+    public static int getGamesWon() {
         return GamesWon;
     }
 
-    public void setGamesWon(int gamesWon) {
-        GamesWon = gamesWon;
+    public static void setGamesWon(int GamesWon) {
+        UserDataConnector.GamesWon = GamesWon;
     }
-
+    
+    
 
 }
