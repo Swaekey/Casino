@@ -1,27 +1,35 @@
-
-UserID: ea46115d-c163-4f1a-8e79-7c2f093453a0
+UserID: 75dbb1c4-6c43-497b-93a1-60c458969c92
 Name: Serena Herter
 Username: s_wish
 Email: serena@email.com
 Password: puppy21
-CreatedAt: Sat Apr 24 19:26:01 EDT 2021
+CreatedOn: Mon Apr 26 11:54:18 EDT 2021
 GamesPlayed: 0
 GamesWon: 0
 
-UserID: 429385cb-cdd3-4949-bf44-8a6c48300970
+UserID: 95ccdffd-7b4a-47e6-8321-c88d8e86d838
 Name: Gwen
 Username: Admin
 Email: admin@email.com
 Password: password123
-CreatedAt: Sat Apr 24 19:26:01 EDT 2021
+CreatedOn: Mon Apr 26 11:54:18 EDT 2021
 GamesPlayed: 0
 GamesWon: 0
 
-UserID: 80146e3b-61f7-4366-8b85-f952a5b2f2d8
+UserID: c348e979-6da0-4417-be7d-5fe21e008341
 Name: peter
 Username: cardPlayer
 Email: peter.33@email.com
 Password: 1234
-CreatedAt: Sat Apr 24 19:26:01 EDT 2021
+CreatedOn: Mon Apr 26 11:54:18 EDT 2021
+GamesPlayed: 0
+GamesWon: 0
+
+UserID: 91e2ff56-077e-4aa6-ad87-35f5a4c3f83c
+Name: Maria
+Username: PuddleWart
+Email: m.jones@email.com
+Password: 00
+CreatedOn: Mon Apr 26 13:18:16 EDT 2021
 GamesPlayed: 0
 GamesWon: 0
