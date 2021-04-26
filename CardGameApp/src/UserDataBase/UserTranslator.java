@@ -106,10 +106,10 @@ public class UserTranslator {
             try {
 
                 randAccFile.writeBytes("UserID: " + userID + "\r\n");
-                randAccFile.writeBytes("Name: " + name + "\r\n");
-                randAccFile.writeBytes("Username: " + username + "\r\n");
-                randAccFile.writeBytes("Email: " + email + "\r\n");
-                randAccFile.writeBytes("Password: " + password + "\r\n");
+                randAccFile.writeBytes("Name: " + Name + "\r\n");
+                randAccFile.writeBytes("Username: " + Username + "\r\n");
+                randAccFile.writeBytes("Email: " + Email + "\r\n");
+                randAccFile.writeBytes("Password: " + Password + "\r\n");
                 randAccFile.writeBytes("CreatedAt: " + date + "\r\n");
                 randAccFile.writeBytes("GamesPlayed: " + 0 + "\r\n");
                 randAccFile.writeBytes("GamesWon: " + 0 + "\r\n");

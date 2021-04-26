@@ -26,3 +26,57 @@ CreatedAt: Sat Apr 24 19:26:01 EDT 2021
 GamesPlayed: 0
 GamesWon: 0
 
+UserID: 6d648eaf-0df7-4d55-bf18-67c57aa09775
+Name: null
+Username: null
+Email: null
+Password: null
+CreatedAt: Mon Apr 26 03:54:57 EDT 2021
+GamesPlayed: 0
+GamesWon: 0
+
+UserID: 8b192a55-09c2-48af-a1cf-3e8287f13406
+Name: null
+Username: null
+Email: null
+Password: null
+CreatedAt: Mon Apr 26 03:54:57 EDT 2021
+GamesPlayed: 0
+GamesWon: 0
+
+UserID: 7652eb2f-5056-412a-adf9-87a2327a1788
+Name: null
+Username: null
+Email: null
+Password: null
+CreatedAt: Mon Apr 26 03:54:57 EDT 2021
+GamesPlayed: 0
+GamesWon: 0
+
+UserID: e9e3709c-841a-45c4-abaa-1d6a4bab76f9
+Name: null
+Username: null
+Email: null
+Password: null
+CreatedAt: Mon Apr 26 03:55:03 EDT 2021
+GamesPlayed: 0
+GamesWon: 0
+
+UserID: 8a029fc8-75d0-4b19-8671-980b8deeba28
+Name: null
+Username: null
+Email: null
+Password: null
+CreatedAt: Mon Apr 26 03:55:03 EDT 2021
+GamesPlayed: 0
+GamesWon: 0
+
+UserID: 59d816c9-91a3-48f3-a1f3-7cb7d43e5272
+Name: null
+Username: null
+Email: null
+Password: null
+CreatedAt: Mon Apr 26 03:55:03 EDT 2021
+GamesPlayed: 0
+GamesWon: 0
+

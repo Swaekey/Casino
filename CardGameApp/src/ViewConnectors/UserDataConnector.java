@@ -6,79 +6,78 @@
  */
 package ViewConnectors;
 
+import UserDataBase.UserTranslator;
 import java.util.Date;
 
-public class UserDataConnector {
+public class UserDataConnector extends UserTranslator {
 
-    static String UserID, Name, Username, Email, Password;
-    static Date date;
-    static int GamesPlayed, GamesWon;
+    public static String Name, Username, Email, Password;
+    public Date date;
+    public int GamesPlayed, GamesWon;
 
-    public UserDataConnector() {
+    public UserDataConnector(String Name, String Username, String Email, String Password) {
+        super(Name, Username, Email, Password);
+        
+        this.date = date;
+        this.GamesPlayed = GamesPlayed;
+        this.GamesWon = GamesWon;
+
     }
 
-    public static String getUserID() {
-        return UserID;
-    }
-
-    public static void setUserID(String UserID) {
-        UserDataConnector.UserID = UserID;
-    }
-
-    public static String getName() {
+    public String getName() {
         return Name;
     }
 
-    public static void setName(String Name) {
-        UserDataConnector.Name = Name;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
-    public static String getUsername() {
+    public String getUsername() {
         return Username;
     }
 
-    public static void setUsername(String Username) {
-        UserDataConnector.Username = Username;
+    public void setUsername(String Username) {
+        this.Username = Username;
     }
 
-    public static String getEmail() {
+    public String getEmail() {
         return Email;
     }
 
-    public static void setEmail(String Email) {
-        UserDataConnector.Email = Email;
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
 
-    public static String getPassword() {
+    public String getPassword() {
         return Password;
     }
 
-    public static void setPassword(String Password) {
-        UserDataConnector.Password = Password;
+    public void setPassword(String Password) {
+        this.Password = Password;
     }
 
-    public static Date getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public static void setDate(Date date) {
-        UserDataConnector.date = date;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public static int getGamesPlayed() {
+    public int getGamesPlayed() {
         return GamesPlayed;
     }
 
-    public static void setGamesPlayed(int GamesPlayed) {
-        UserDataConnector.GamesPlayed = GamesPlayed;
+    public void setGamesPlayed(int GamesPlayed) {
+        this.GamesPlayed = GamesPlayed;
     }
 
-    public static int getGamesWon() {
+    public int getGamesWon() {
         return GamesWon;
     }
 
-    public static void setGamesWon(int GamesWon) {
-        UserDataConnector.GamesWon = GamesWon;
+    public void setGamesWon(int GamesWon) {
+        this.GamesWon = GamesWon;
     }
     
     

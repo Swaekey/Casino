@@ -6,15 +6,16 @@
  */
 package View;
 
-
+import ViewConnectors.UserDataConnector;
 import ViewConnectors.WarGameConnector;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class CardGameAppUI extends javax.swing.JFrame {
+
     WarGameConnector wargame = new WarGameConnector();
-    
+
     /**
      * Creates new form CardGameAppUI
      */
@@ -723,9 +724,9 @@ public class CardGameAppUI extends javax.swing.JFrame {
         mainPanel.add(gamePlayPanel);
         mainPanel.repaint();
         mainPanel.revalidate();
-        
+
         wargame = new WarGameConnector();
-        wargame.startNewGame();        
+        wargame.startNewGame();
         WinnerMessageLabel.setText(wargame.winnerMessage());
         DynamicPlayerCardsRemainingLabel.setText(wargame.player1Score());
         DynamicComputerCardsRemainingLabel.setText(wargame.player2Score());
@@ -750,6 +751,7 @@ public class CardGameAppUI extends javax.swing.JFrame {
         mainPanel.add(userProfilePanel);
         mainPanel.repaint();
         mainPanel.revalidate();
+
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void UpdateProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateProfileButtonActionPerformed
@@ -784,10 +786,6 @@ public class CardGameAppUI extends javax.swing.JFrame {
         DynamicComputerCardsRemainingLabel.setText(wargame.player2Score());
     }//GEN-LAST:event_forfeitButtonActionPerformed
 
-    
-    
-    
-    
     /**
      * @param args the command line arguments
      */
