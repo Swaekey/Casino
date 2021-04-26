@@ -6,10 +6,12 @@
  */
 package ViewConnectors;
 
+import java.util.Date;
+
 public class UserDataConnector {
-    public String UserID, Name, Username, Email, Password;
-    public Date date;
-    public int GamesPlayed, GamesWon;
+    static String UserID, Name, Username, Email, Password;
+    static Date date;
+    static int GamesPlayed, GamesWon;
 
     public UserDataConnector(String userID, String name, String username, String email, String password, Date date, int gamesPlayed, int gamesWon) {
         UserID = userID;
