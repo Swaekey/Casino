@@ -242,6 +242,39 @@ public class CardDeckAPI {
         }
         return 0;
     }
+    
+    //Shuffles pileName
+    public static void shufflePile(String pileName) {
+        String callAction = "/" + deckID + "/pile/" + pileName + "/shuffle/";
+        String urlString = BASE_URL + callAction;
+        URL url;
+        try {
+            // Make the connection.
+            url = new URL(urlString);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+
+            // Examine the response code.
+            int status = con.getResponseCode();
+            if (status != 200) {
+                System.out.printf("Error: Could not load deck: " + status);
+            } else {
+                // Parsing input stream into a text string.
+                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                String inputLine;
+                StringBuffer content = new StringBuffer();
+                while ((inputLine = in.readLine()) != null) {
+                    content.append(inputLine);
+                }
+                // Close the connections.
+                in.close();
+                con.disconnect();
+            }
+        } catch (Exception ex) {
+            System.out.println("Error: " + ex);
+            return;
+        }
+    }
 
     //adds one card drawn from deck to pileName returns information on Card added
     public static CardsAPI addToPileFromDeck(String pileName) {

@@ -49,6 +49,14 @@ public class CardDeck {
     }
     
     /**
+     * shuffles cards in pileName
+     * @param pileName
+     */
+    public static void shufflePile(String pileName){
+        api.CardDeckAPI.shufflePile(pileName);
+    }
+    
+    /**
      * draws card from main deck and adds that card to pileName
      * @param pileName
      * @return the card added information
