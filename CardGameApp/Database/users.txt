@@ -1,0 +1,27 @@
+
+UserID: ea46115d-c163-4f1a-8e79-7c2f093453a0
+Name: Serena Herter
+Username: s_wish
+Email: serena@email.com
+Password: puppy21
+CreatedAt: Sat Apr 24 19:26:01 EDT 2021
+GamesPlayed: 0
+GamesWon: 0
+
+UserID: 429385cb-cdd3-4949-bf44-8a6c48300970
+Name: Gwen
+Username: Admin
+Email: admin@email.com
+Password: password123
+CreatedAt: Sat Apr 24 19:26:01 EDT 2021
+GamesPlayed: 0
+GamesWon: 0
+
+UserID: 80146e3b-61f7-4366-8b85-f952a5b2f2d8
+Name: peter
+Username: cardPlayer
+Email: peter.33@email.com
+Password: 1234
+CreatedAt: Sat Apr 24 19:26:01 EDT 2021
+GamesPlayed: 0
+GamesWon: 0
