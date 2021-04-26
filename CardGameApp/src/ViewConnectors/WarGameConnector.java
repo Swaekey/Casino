@@ -16,69 +16,68 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class WarGameConnector {
-    
+
     static int numRounds = 0;
     WarGame newGame;
     String player = UserDataConnector.Username;
-    
+
     //startNewGame
-    public WarGame startNewGame(){
+    public WarGame startNewGame() {
         newGame = new WarGame(player);
         numRounds = 0;
         //set player games played ++
         return newGame;
     }
-    
+
     //newRound
-    public void newRound(){
-        
-        if (numRounds > 0 && "tie".equals(newGame.getWinnerFromRound(numRounds - 1))){
+    public void newRound() {
+
+        if (numRounds > 0 && "tie".equals(newGame.getWinnerFromRound(numRounds - 1))) {
             newGame.newGameRoundAfterTie(numRounds);
-        }
-        else{
+        } else {
             newGame.newGameRound(numRounds);
         }
-        numRounds ++;
+        numRounds++;
     }
-    
+
     //update Player1Image
-    public Icon player1Image() throws MalformedURLException, IOException{        
+    public Icon player1Image() throws MalformedURLException, IOException {
         URL url = new URL(newGame.getPlayer1CardImageFromRound(numRounds));
         Image image = ImageIO.read(url);
         ImageIcon icon = new ImageIcon(image);
         return icon;
     }
-    
-    public void p1(){
+
+    public void p1() {
         System.out.println(newGame.getPlayer1CardImageFromRound(numRounds));
     }
-    
-    public void p2(){
+
+    public void p2() {
         System.out.println(newGame.getPlayer2CardImageFromRound(numRounds));
     }
-    
+
     //update Player2Image
-    public Icon player2Image() throws MalformedURLException, IOException{
-        
+    public Icon player2Image() throws MalformedURLException, IOException {
+
         URL url = new URL(newGame.getPlayer2CardImageFromRound(numRounds));
         Image image = ImageIO.read(url);
         ImageIcon icon = new ImageIcon(image);
         return icon;
     }
-    
+
     //updatePlayer1Score
-    public String player1Score(){
+    public String player1Score() {
         return Integer.toString(newGame.getPlayer1Score());
     }
-    
+
     //updatePlayer2Score
-    public String player2Score(){
+    public String player2Score() {
         return Integer.toString(newGame.getPlayer2Score());
     }
-    
+
     //WinnerMessage
-    public String winnerMessage(){
+    public String winnerMessage() {
         return newGame.getGameRoundWinner();
     }
-    
+
 }
