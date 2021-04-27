@@ -45,7 +45,7 @@ public class CardGameAppUI extends javax.swing.JFrame {
         passwordLabel = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
         SignUpButton = new javax.swing.JButton();
-        btnclose = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         userProfilePanel = new javax.swing.JPanel();
         UserProfilePageTitlePanel = new java.awt.Panel();
         UserProfilePageTitleLabel = new javax.swing.JLabel();
@@ -158,10 +158,10 @@ public class CardGameAppUI extends javax.swing.JFrame {
             }
         });
 
-        btnclose.setText("close");
-        btnclose.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("close");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncloseActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -175,20 +175,21 @@ public class CardGameAppUI extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(LogInPageTitlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(logInPanelLayout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addGroup(logInPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(usernameTextField)
-                            .addComponent(passwordPasswordField)
-                            .addComponent(usernameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(passwordLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
-                            .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(SignUpButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(logInPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(logInPanelLayout.createSequentialGroup()
+                                .addGap(113, 113, 113)
+                                .addGroup(logInPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(usernameTextField)
+                                    .addComponent(passwordPasswordField)
+                                    .addComponent(usernameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(passwordLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
+                                    .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(SignUpButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(logInPanelLayout.createSequentialGroup()
+                                .addGap(242, 242, 242)
+                                .addComponent(jButton1)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logInPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnclose, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(235, 235, 235))
         );
         logInPanelLayout.setVerticalGroup(
             logInPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,9 +208,9 @@ public class CardGameAppUI extends javax.swing.JFrame {
                 .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addComponent(SignUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addComponent(btnclose, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(50, 50, 50))
         );
 
         mainPanel.add(logInPanel, "card1");
@@ -336,7 +337,7 @@ public class CardGameAppUI extends javax.swing.JFrame {
                 .addGroup(userProfilePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(DynamicPlayerSinceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(DynamicGamesPlayedLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(totalWinsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE))
+                    .addComponent(totalWinsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(UpdateProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
@@ -405,7 +406,7 @@ public class CardGameAppUI extends javax.swing.JFrame {
                 .addComponent(LeaderBoardPageTitlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(133, 133, 133)
                 .addComponent(leaderBoardScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(259, Short.MAX_VALUE))
+                .addContainerGap(257, Short.MAX_VALUE))
         );
 
         mainPanel.add(leaderBoardPanel, "card2");
@@ -534,7 +535,7 @@ public class CardGameAppUI extends javax.swing.JFrame {
                 .addComponent(GamePlayPageTitlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(gamePlayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ComputerCardjLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
+                    .addComponent(ComputerCardjLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
                     .addComponent(Player1CardjLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(gamePlayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -697,7 +698,7 @@ public class CardGameAppUI extends javax.swing.JFrame {
                     .addComponent(matchPasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(70, 70, 70)
                 .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         mainPanel.add(signUpPanel, "card3");
@@ -881,10 +882,10 @@ public class CardGameAppUI extends javax.swing.JFrame {
         mainPanel.revalidate();
     }//GEN-LAST:event_btnlogoutActionPerformed
 
-    private void btncloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncloseActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         dispose();
-    }//GEN-LAST:event_btncloseActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -947,7 +948,6 @@ public class CardGameAppUI extends javax.swing.JFrame {
     private java.awt.Panel UserProfilePageTitlePanel;
     private javax.swing.JTextField UsernameTextField;
     private javax.swing.JLabel WinnerMessageLabel;
-    private javax.swing.JButton btnclose;
     private javax.swing.JButton btnlogout;
     private javax.swing.JButton computerDeckjButton;
     private javax.swing.JLabel emailLabel;
@@ -956,6 +956,7 @@ public class CardGameAppUI extends javax.swing.JFrame {
     private javax.swing.JPanel gamePlayPanel;
     private javax.swing.JLabel gamesPlayedLabel;
     private javax.swing.JPanel headerPanel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton leaderBoardButton;
     private javax.swing.JPanel leaderBoardPanel;
     private javax.swing.JScrollPane leaderBoardScrollPane;
