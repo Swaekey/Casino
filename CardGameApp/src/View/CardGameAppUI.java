@@ -785,6 +785,11 @@ public class CardGameAppUI extends javax.swing.JFrame {
         mainPanel.add(userProfilePanel);
         mainPanel.repaint();
         mainPanel.revalidate();
+        
+        DynamicGamesPlayedLabel.setText(userdata.GamesPlayed());
+        //DynamicPlayerSinceLabel.setText(userdata.);
+        DynamicTotalWinsLabel1.setText(userdata.GamesWon());
+        DynamicUsernameLabel.setText(Username);
     }//GEN-LAST:event_userProfileButtonActionPerformed
 
     private void SignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButtonActionPerformed
