@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Gameplay;
 
 import java.awt.Image;
@@ -11,7 +6,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-
 
 public class WarGameProtype {
 
@@ -28,10 +22,10 @@ public class WarGameProtype {
         System.out.println(test.getPlayer1CardImageFromRound(1) + " to " + test.getPlayer2CardImageFromRound(1));
         System.out.println(test.getPlayer1Score() + " to " + test.getPlayer2Score());
         System.out.println(test.getWAR_PILE());
-        
+
         URL url = new URL(test.getPlayer2CardImageFromRound(1));
         Image image = ImageIO.read(url);
-       // ImageIcon icon = new ImageIcon(image);
+        // ImageIcon icon = new ImageIcon(image);
         System.out.println(test.newGameRound(2));
         System.out.println(test.getPlayer1CardImageFromRound(2) + " to " + test.getPlayer2CardImageFromRound(2));
         System.out.println(test.getPlayer1Score() + " to " + test.getPlayer2Score());
@@ -51,5 +45,5 @@ public class WarGameProtype {
         System.out.println(test.getPlayer1Score() + " to " + test.getPlayer2Score());
         System.out.println(test.getWAR_PILE());
     }
-    
+
 }

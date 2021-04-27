@@ -6,6 +6,7 @@
  */
 package ViewConnectors;
 
+
 import UserDataBase.UserTranslator;
 import java.util.Date;
 
@@ -18,14 +19,18 @@ public class UserDataConnector extends UserTranslator {
 
     public UserDataConnector(String Name, String Username, String Email, String Password) {
         super(Name, Username, Email, Password);
-        
+
         this.date = date;
         this.GamesPlayed = GamesPlayed;
         this.GamesWon = GamesWon;
 
     }
+
+    public UserDataConnector() {
+    }
     
-    public void addData(){
+
+    public void addData() {
         super.addUserData(Name, Username, Email, Password);
     }
 
@@ -84,7 +89,60 @@ public class UserDataConnector extends UserTranslator {
     public void setGamesWon(int GamesWon) {
         this.GamesWon = GamesWon;
     }
-    
-    
+
+    @Override
+    public void setCreatedOn(Date CreatedOn) {
+        super.setCreatedOn(CreatedOn); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Date getCreatedOn() {
+        return super.getCreatedOn(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void updateRecordbyUsername(String username, String newPassword, String newEmail) {
+        super.updateRecordbyUsername(username, newPassword, newEmail); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getUserByUsername(String user) {
+        return super.getUserByUsername(user); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean isUniqueUsername(String user) {
+        return super.isUniqueUsername(user); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void checkLines() {
+        super.checkLines(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void validateUserDataLogic(String userName, String password) {
+        super.validateUserDataLogic(userName, password); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void validateUserData(String userName, String password) {
+        super.validateUserData(userName, password); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void addUserData(String name, String username, String email, String password) {
+        super.addUserData(name, username, email, password); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void readFile() {
+        super.readFile(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void createFolder() {
+        super.createFolder(); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

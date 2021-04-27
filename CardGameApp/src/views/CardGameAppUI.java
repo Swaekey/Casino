@@ -109,6 +109,11 @@ public class CardGameAppUI extends javax.swing.JFrame {
         );
 
         usernameTextField.setToolTipText("username");
+        usernameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameTextFieldActionPerformed(evt);
+            }
+        });
 
         passwordPasswordField.setToolTipText("password123");
 
@@ -392,10 +397,8 @@ public class CardGameAppUI extends javax.swing.JFrame {
             .addComponent(GamePlayPageTitleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        computerDeckjButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/card back.png"))); // NOI18N
         computerDeckjButton.setToolTipText("");
 
-        playerDeckButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/card back.png"))); // NOI18N
         playerDeckButton.setToolTipText("");
 
         ComputerCardjLabel.setBackground(new java.awt.Color(255, 255, 255));
@@ -447,14 +450,12 @@ public class CardGameAppUI extends javax.swing.JFrame {
             .addGroup(gamePlayPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(gamePlayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(gamePlayPanelLayout.createSequentialGroup()
-                        .addComponent(GamePlayPageTitlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
+                    .addComponent(GamePlayPageTitlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePlayPanelLayout.createSequentialGroup()
                         .addComponent(Player1CardjLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, Short.MAX_VALUE)
-                        .addComponent(ComputerCardjLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addComponent(ComputerCardjLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         gamePlayPanelLayout.setVerticalGroup(
             gamePlayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -726,6 +727,10 @@ public class CardGameAppUI extends javax.swing.JFrame {
         mainPanel.repaint();
         mainPanel.revalidate();
     }//GEN-LAST:event_UpdateProfileButtonActionPerformed
+
+    private void usernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameTextFieldActionPerformed
 
     
     
