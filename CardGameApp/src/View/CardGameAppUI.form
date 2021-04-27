@@ -68,24 +68,27 @@
                               <Component id="LogInPageTitlePanel" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="usernameTextField" max="32767" attributes="0"/>
-                                  <Component id="passwordPasswordField" max="32767" attributes="0"/>
-                                  <Component id="usernameLabel" max="32767" attributes="0"/>
-                                  <Component id="passwordLabel" alignment="1" pref="353" max="32767" attributes="0"/>
-                                  <Component id="loginButton" max="32767" attributes="0"/>
-                                  <Component id="SignUpButton" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="usernameTextField" max="32767" attributes="0"/>
+                                          <Component id="passwordPasswordField" max="32767" attributes="0"/>
+                                          <Component id="usernameLabel" max="32767" attributes="0"/>
+                                          <Component id="passwordLabel" alignment="1" pref="353" max="32767" attributes="0"/>
+                                          <Component id="loginButton" max="32767" attributes="0"/>
+                                          <Component id="SignUpButton" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="242" max="-2" attributes="0"/>
+                                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="btnclose" min="-2" pref="97" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="235" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -106,9 +109,9 @@
                       <Component id="loginButton" min="-2" pref="38" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                       <Component id="SignUpButton" min="-2" pref="85" max="-2" attributes="0"/>
-                      <EmptySpace pref="59" max="32767" attributes="0"/>
-                      <Component id="btnclose" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace pref="69" max="32767" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -211,12 +214,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SignUpButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnclose">
+            <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="close"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncloseActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -284,7 +287,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="DynamicPlayerSinceLabel" max="32767" attributes="0"/>
                           <Component id="DynamicGamesPlayedLabel" max="32767" attributes="0"/>
-                          <Component id="totalWinsLabel" pref="162" max="32767" attributes="0"/>
+                          <Component id="totalWinsLabel" pref="160" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="UpdateProfileButton" min="-2" pref="72" max="-2" attributes="0"/>
@@ -481,7 +484,7 @@
                       <Component id="LeaderBoardPageTitlePanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
                       <Component id="leaderBoardScrollPane" min="-2" pref="149" max="-2" attributes="0"/>
-                      <EmptySpace pref="259" max="32767" attributes="0"/>
+                      <EmptySpace pref="257" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -627,7 +630,7 @@
                       <Component id="GamePlayPageTitlePanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="ComputerCardjLabel" pref="329" max="32767" attributes="0"/>
+                          <Component id="ComputerCardjLabel" pref="327" max="32767" attributes="0"/>
                           <Component id="Player1CardjLabel" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -913,7 +916,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                       <Component id="submitButton" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace pref="72" max="32767" attributes="0"/>
+                      <EmptySpace pref="70" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
