@@ -5,9 +5,11 @@
  */
 package UserDataBase;
 
+import java.io.IOException;
+
 /**
  *
- * @author Serena
+ * @author Serena Herter, Alana Traylor, Srushti Honnenahalli
  */
 public class UserTranslatorProtoype {
 
@@ -29,11 +31,12 @@ public class UserTranslatorProtoype {
         //userDB.validateUserData("s_wish", "puppy21");
         //userDB.validateUserDataLogic("s_wish", "puppy21");
         //userDB.validateUserDataLogic("Admin", "password123");
-        System.out.println(userDB.isUniqueUsername("Admin"));
-        System.out.println(userDB.isUniqueUsername("admin"));
-        System.out.println(userDB.getUserByUsername("Admin"));
-        System.out.println(userDB.getUserByUsername("admin"));
-        userDB.addUserData("Maria", "PuddleWart", "m.jones@email.com", "00");
+        //System.out.println(userDB.isUniqueUsername("Admin"));
+        //System.out.println(userDB.isUniqueUsername("admin"));
+        //System.out.println(userDB.getUserByUsername("Admin"));
+        //System.out.println(userDB.getUserByUsername("admin"));
+        //userDB.addUserData("Maria", "PuddleWart", "m.jones@email.com", "00");
+        userDB.updateRecordbyUsername("s_wish", "1234", "serena@gmail.com");
         
     }
     

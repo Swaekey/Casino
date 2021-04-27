@@ -1,21 +1,26 @@
 /*
  * The Four Lokos
- * Created by: Serena Herter, Srushti Honnenahalli
+ * Created by: Serena Herter, Srushti Honnenahalli, Alana Traylor, KeShawn Posey
  * Created on: 4/24/2021
  * This class translates the user information from the database
  */
 package UserDataBase;
 
+import java.io.BufferedWriter;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.RandomAccessFile;
+import java.io.Writer;
 import java.util.Date;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.Scanner;
 
 public class UserTranslator {
 
@@ -34,9 +39,9 @@ public class UserTranslator {
         this.Email = Email;
         this.Password = Password;
     }
-    
-    public UserTranslator(){
-        
+
+    public UserTranslator() {
+
     }
 
     public void createFolder() {
@@ -58,8 +63,8 @@ public class UserTranslator {
         }
     }
 
-    public void addUserData(String name, String username, String email, String password) {        
-        checkLines();  
+    public void addUserData(String name, String username, String email, String password) {
+        checkLines();
         userID = UUID.randomUUID();
         Name = name;
         Username = username;
@@ -68,11 +73,11 @@ public class UserTranslator {
         CreatedOn = date;
         GamesPlayed = 0;
         GamesWon = 0;
-        if (!isValidEmail(email)){
+        if (!isValidEmail(email)) {
             System.out.println("bad email");
             return;
         }
-        if (!isUniqueUsername(username)){
+        if (!isUniqueUsername(username)) {
             System.out.println("username taken");
             return;
         }
@@ -130,26 +135,26 @@ public class UserTranslator {
             Logger.getLogger(UserTranslator.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public void validateUserDataLogic(String userName, String password){
+
+    public void validateUserDataLogic(String userName, String password) {
         String un;
         String pw;
-        
+
         try {
             RandomAccessFile randAccFile = new RandomAccessFile(txtfile + "\\users.txt", "rw");
-            for (int i = 0; i < ln; i += 8){
+            for (int i = 0; i < ln; i += 8) {
                 randAccFile.readLine();
                 randAccFile.readLine();
                 un = randAccFile.readLine().substring(10);
                 randAccFile.readLine();
                 pw = randAccFile.readLine().substring(10);
                 if (un.equals(Username) && pw.equals(Password)) {
-                System.out.println("login success");
-                break;
-            } else {
-                System.out.println("login fail");
-            }
-                for(int j = 0; j < 4; j++){
+                    System.out.println("login success");
+                    break;
+                } else {
+                    System.out.println("login fail");
+                }
+                for (int j = 0; j < 4; j++) {
                     randAccFile.readLine();
                 }
             }
@@ -162,7 +167,7 @@ public class UserTranslator {
 
     public void checkLines() {
         try {
-             ln = 1;
+            ln = 1;
             RandomAccessFile randAccFile = new RandomAccessFile(txtfile + "\\users.txt", "rw");
             for (int i = 0; randAccFile.readLine() != null; i++) {
                 ln++;
@@ -174,96 +179,138 @@ public class UserTranslator {
             Logger.getLogger(UserTranslator.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     static boolean isValidEmail(String email) {
-      String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
-      return email.matches(regex);
-   }
-   
-    
-   
-   public boolean isUniqueUsername(String user){
-       String un;
-      // System.out.println(ln);
+        String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        return email.matches(regex);
+    }
+
+    public boolean isUniqueUsername(String user) {
+        String un;
+        // System.out.println(ln);
         try {
             RandomAccessFile randAccFile = new RandomAccessFile(txtfile + "\\users.txt", "rw");
-            for (int i = 0; i < ln - 8; i += 8){
+            for (int i = 0; i < ln - 8; i += 8) {
                 //System.out.println(i);
                 randAccFile.readLine();
                 randAccFile.readLine();
                 un = randAccFile.readLine().substring(10);
                 //System.out.println(un);
-                if (un.equals(user)) {                
-                return false;                
-            } 
-                for(int j = 0; j < 6; j++){
+                if (un.equals(user)) {
+                    return false;
+                }
+                for (int j = 0; j < 6; j++) {
                     randAccFile.readLine();
                 }
             }
-            
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(UserTranslator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(UserTranslator.class.getName()).log(Level.SEVERE, null, ex);
         }
-       System.out.println("new username");
-       return true;
-   }
-
-   
-    public String getUserByUsername(String user) {
-        if (isUniqueUsername(user)){
-            return "no such user";
-        }
-        else {
-        
-        String un = "";
-        String ID = "";
-        String Played = "";
-        String Won = "";
-        String Created = "";
-        try {
-            RandomAccessFile randAccFile = new RandomAccessFile(txtfile + "\\users.txt", "rw");
-            for (int i = 0; i < ln - 8; i += 8){
-                ID = randAccFile.readLine().substring(8);
-                Name = randAccFile.readLine().substring(6);
-                un = randAccFile.readLine().substring(10);
-                Email = randAccFile.readLine().substring(7);
-                Password = randAccFile.readLine().substring(10);
-                Played = randAccFile.readLine().substring(13);
-                Won = randAccFile.readLine().substring(10);
-                Created = randAccFile.readLine().substring(11);
-                randAccFile.readLine();
-
-                if (un.equals(user)) {                
-                return "UserTranslator{" + 
-                        "userID=" + ID + 
-                        ", Name=" + Name + 
-                        ", Username=" + un + 
-                        ", Email=" + Email + 
-                        ", Password=" + Password + 
-                        ", GamesPlayed=" + Played + 
-                        ", GamesWon=" + Won + 
-                        ", CreatedOn=" + Created + '}';
-                }
-                else {
-                    //System.out.println("still checking");
-                }
-                
-            }
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(UserTranslator.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(UserTranslator.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
-        return null;
-        }
+        System.out.println("new username");
+        return true;
     }
-   
-   
-   
-   public String getName() {
+
+    public String getUserByUsername(String user) {
+        if (isUniqueUsername(user)) {
+            return "no such user";
+        } else {
+
+            String un = "";
+            String ID = "";
+            String Played = "";
+            String Won = "";
+            String Created = "";
+            try {
+                RandomAccessFile randAccFile = new RandomAccessFile(txtfile + "\\users.txt", "rw");
+                for (int i = 0; i < ln - 8; i += 8) {
+                    ID = randAccFile.readLine().substring(8);
+                    Name = randAccFile.readLine().substring(6);
+                    un = randAccFile.readLine().substring(10);
+                    Email = randAccFile.readLine().substring(7);
+                    Password = randAccFile.readLine().substring(10);
+                    Played = randAccFile.readLine().substring(13);
+                    Won = randAccFile.readLine().substring(10);
+                    Created = randAccFile.readLine().substring(11);
+                    randAccFile.readLine();
+
+                    if (un.equals(user)) {
+                        return "UserTranslator{"
+                                + "userID=" + ID
+                                + ", Name=" + Name
+                                + ", Username=" + un
+                                + ", Email=" + Email
+                                + ", Password=" + Password
+                                + ", GamesPlayed=" + Played
+                                + ", GamesWon=" + Won
+                                + ", CreatedOn=" + Created + '}';
+                    } else {
+                        //System.out.println("still checking");
+                    }
+
+                }
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(UserTranslator.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(UserTranslator.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            return null;
+        }
+
+    }
+
+    public void updateRecordbyUsername(String username, String newPassword, String newEmail) {
+        String record, record2;
+        
+        try{
+        File db = new File("users.txt");
+        File tempDB = new File("users_db_temp.txt");
+
+        BufferedReader br = new BufferedReader(new FileReader(db));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(tempDB));
+
+        Scanner strInput = new Scanner(System.in);
+
+        System.out.println("Enter username: ");
+        Username = strInput.nextLine();
+
+        br.close();
+
+        
+        System.out.println("Enter the new Password: ");
+        newPassword = strInput.nextLine();
+        System.out.println("Enter the new Email: ");
+        newEmail = strInput.nextLine();
+
+        BufferedReader br2 = new BufferedReader(new FileReader(db));
+
+        while ((record2 = br2.readLine()) != null) {
+            if (record2.contains(Username)) {
+                bw.write(Username + "," + newPassword + "," + newEmail);
+            } else {
+
+                bw.write(record2);
+            }
+            bw.flush();
+            bw.newLine();
+        }
+
+        bw.close();
+        br2.close();
+        db.delete();
+        boolean success = tempDB.renameTo(db);
+        System.out.println(success);
+        }
+        catch(IOException e){
+            
+        }
+
+    }
+
+    public String getName() {
         return Name;
     }
 
@@ -318,7 +365,5 @@ public class UserTranslator {
     public void setCreatedOn(Date CreatedOn) {
         this.CreatedOn = CreatedOn;
     }
-    
-    
 
 }
