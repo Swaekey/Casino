@@ -93,7 +93,7 @@ public class WarGame {
 
         switch (player1Card.compareTo(player2Card)) {
             case 0:
-                gameRoundWinner = "tie";
+                gameRoundWinner = "tie, Draw Again!";
                 return player1Card;
             case 1:
                 gameRoundWinner = player1;
