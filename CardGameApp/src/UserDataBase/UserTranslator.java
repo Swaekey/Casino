@@ -21,6 +21,8 @@ import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class UserTranslator {
 
@@ -28,7 +30,7 @@ public class UserTranslator {
     UUID userID;
     int ln = 1;
     Date date = new Date();
-    static String Name, Username, Email, Password;
+    String Name, Username, Email, Password;
     int GamesPlayed, GamesWon;
     Date CreatedOn;
 
@@ -262,52 +264,59 @@ public class UserTranslator {
 
     }
 
-    public void updateRecordbyUsername(String username, String newPassword, String newEmail) {
-        String record, record2;
-        
-        try{
-        File db = new File("users.txt");
-        File tempDB = new File("users_db_temp.txt");
+//    public void updateRecordbyUsername() {
+//        String record;
+//        String newPassword = Password;
+//        String username = Username;
+//
+//        try {
+//            File db = new File(txtfile + "\\users.txt");
+//            File tempDB = new File(txtfile + "\\users_db_temp.txt");
+//
+//            BufferedReader br = new BufferedReader(new FileReader(db));
+//            BufferedWriter bw = new BufferedWriter(new FileWriter(tempDB));
+//
+//            Scanner strInput = new Scanner(System.in);
+//
+//            System.out.println("Enter username: ");
+//            username = strInput.nextLine();
+//
+//            System.out.println("Enter the new Password: ");
+//            newPassword = strInput.nextLine();
+//
+//            while ((record = br.readLine()) != null) {
+//                if (record.equals(username)) {
+//                        return "UserTranslator{"
+//                                + "userID=" + ID
+//                                + ", Name=" + Name
+//                                + ", Username=" + Username
+//                                + ", Email=" + Email
+//                                + ", Password=" + Password + '}';
+//                } else {
+//
+//                   bw.write(record);
+//                }
+//                bw.flush();
+//                bw.newLine();
+//            }
+//
+//            bw.close();
+//            br.close();
+//            db.delete();
+//            boolean success = tempDB.renameTo(db);
+//            System.out.println(success);
+//        } catch (IOException e) {
+//
+//        }
+//
+//    }
 
-        BufferedReader br = new BufferedReader(new FileReader(db));
-        BufferedWriter bw = new BufferedWriter(new FileWriter(tempDB));
+    public Date getDate() {
+        return date;
+    }
 
-        Scanner strInput = new Scanner(System.in);
-
-        System.out.println("Enter username: ");
-        Username = strInput.nextLine();
-
-        br.close();
-
-        
-        System.out.println("Enter the new Password: ");
-        newPassword = strInput.nextLine();
-        System.out.println("Enter the new Email: ");
-        newEmail = strInput.nextLine();
-
-        BufferedReader br2 = new BufferedReader(new FileReader(db));
-
-        while ((record2 = br2.readLine()) != null) {
-            if (record2.contains(Username)) {
-                bw.write(Username + "," + newPassword + "," + newEmail);
-            } else {
-
-                bw.write(record2);
-            }
-            bw.flush();
-            bw.newLine();
-        }
-
-        bw.close();
-        br2.close();
-        db.delete();
-        boolean success = tempDB.renameTo(db);
-        System.out.println(success);
-        }
-        catch(IOException e){
-            
-        }
-
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getName() {
@@ -318,7 +327,7 @@ public class UserTranslator {
         this.Name = Name;
     }
 
-    public static String getUsername() {
+    public String getUsername() {
         return Username;
     }
 
@@ -365,5 +374,6 @@ public class UserTranslator {
     public void setCreatedOn(Date CreatedOn) {
         this.CreatedOn = CreatedOn;
     }
-
+    
+    
 }

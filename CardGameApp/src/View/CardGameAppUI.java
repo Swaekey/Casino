@@ -6,9 +6,14 @@
  */
 package View;
 
-import ViewConnectors.UserDataConnector;
+import ViewConnectors.UserDataController;
 import ViewConnectors.WarGameConnector;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.Date;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -16,8 +21,7 @@ import javax.swing.JOptionPane;
 public class CardGameAppUI extends javax.swing.JFrame {
 
     WarGameConnector wargame = new WarGameConnector();
-    UserDataConnector userdata = new UserDataConnector();
-    String Name, Username, Password, Email;
+    UserDataController userdata = new UserDataController();
 
     /**
      * Creates new form CardGameAppUI
@@ -74,6 +78,8 @@ public class CardGameAppUI extends javax.swing.JFrame {
         forfeitButton = new javax.swing.JButton();
         WinnerMessageLabel = new javax.swing.JLabel();
         btnlogout = new javax.swing.JButton();
+        gamplayPlayerLabel = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         signUpPanel = new javax.swing.JPanel();
         SignUpPageTitlePanel = new java.awt.Panel();
         SignupPageTitleLabel = new javax.swing.JLabel();
@@ -469,6 +475,7 @@ public class CardGameAppUI extends javax.swing.JFrame {
         forfeitButton.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         forfeitButton.setText("Forfeit");
         forfeitButton.setToolTipText("");
+        forfeitButton.setInheritsPopupMenu(true);
         forfeitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 forfeitButtonActionPerformed(evt);
@@ -487,6 +494,22 @@ public class CardGameAppUI extends javax.swing.JFrame {
                 btnlogoutActionPerformed(evt);
             }
         });
+
+        gamplayPlayerLabel.setFont(new java.awt.Font("Impact", 0, 12)); // NOI18N
+        gamplayPlayerLabel.setForeground(new java.awt.Color(255, 255, 255));
+        gamplayPlayerLabel.setText("PLAYER");
+        gamplayPlayerLabel.setMaximumSize(new java.awt.Dimension(91, 16));
+        gamplayPlayerLabel.setMinimumSize(new java.awt.Dimension(91, 16));
+        gamplayPlayerLabel.setPreferredSize(new java.awt.Dimension(91, 16));
+
+        jLabel2.setFont(new java.awt.Font("Impact", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("COMPUTER");
+        jLabel2.setToolTipText("");
+        jLabel2.setMaximumSize(new java.awt.Dimension(91, 16));
+        jLabel2.setMinimumSize(new java.awt.Dimension(91, 16));
+        jLabel2.setName(""); // NOI18N
+        jLabel2.setPreferredSize(new java.awt.Dimension(91, 16));
 
         javax.swing.GroupLayout gamePlayPanelLayout = new javax.swing.GroupLayout(gamePlayPanel);
         gamePlayPanel.setLayout(gamePlayPanelLayout);
@@ -513,7 +536,11 @@ public class CardGameAppUI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(gamePlayPanelLayout.createSequentialGroup()
                         .addComponent(DynamicPlayerCardsRemainingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(gamplayPlayerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(gamePlayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(computerDeckjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DynamicComputerCardsRemainingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -545,8 +572,12 @@ public class CardGameAppUI extends javax.swing.JFrame {
                             .addComponent(computerDeckjButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(gamePlayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DynamicComputerCardsRemainingLabel)
-                            .addComponent(DynamicPlayerCardsRemainingLabel)))
+                            .addGroup(gamePlayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(DynamicComputerCardsRemainingLabel)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(gamePlayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(DynamicPlayerCardsRemainingLabel)
+                                .addComponent(gamplayPlayerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(gamePlayPanelLayout.createSequentialGroup()
                         .addComponent(WinnerMessageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -582,6 +613,11 @@ public class CardGameAppUI extends javax.swing.JFrame {
         );
 
         UsernameTextField.setToolTipText("PlayerJohn");
+        UsernameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsernameTextFieldActionPerformed(evt);
+            }
+        });
 
         NameTextField.setToolTipText("John Doe");
 
@@ -785,11 +821,11 @@ public class CardGameAppUI extends javax.swing.JFrame {
         mainPanel.add(userProfilePanel);
         mainPanel.repaint();
         mainPanel.revalidate();
-        
+
         DynamicGamesPlayedLabel.setText(userdata.GamesPlayed());
-        //DynamicPlayerSinceLabel.setText(userdata.);
+        DynamicPlayerSinceLabel.setText(userdata.dateToString());
         DynamicTotalWinsLabel1.setText(userdata.GamesWon());
-        DynamicUsernameLabel.setText(Username);
+        DynamicUsernameLabel.setText(userdata.getName());
     }//GEN-LAST:event_userProfileButtonActionPerformed
 
     private void SignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButtonActionPerformed
@@ -806,19 +842,18 @@ public class CardGameAppUI extends javax.swing.JFrame {
         mainPanel.repaint();
         mainPanel.revalidate();
 
+        UsernameTextField.setText(userdata.Username);
+        NameTextField.setText(userdata.Name);
+        EmailTextField.setText(userdata.Email);
+        matchPasswordField.setText(userdata.Password);
+        newPasswordField.setText(userdata.Password);
+
         userdata.createFolder();
         userdata.readFile();
         userdata.checkLines();
-        userdata.addData();
-
-        /*changed aftere video  -->.*/
+        userdata.addUserData(NameTextField.getText(), UsernameTextField.getText(), EmailTextField.getText(), newPasswordField.getText());
+        userdata.isUniqueUsername(userdata.Username);
         JOptionPane.showMessageDialog(null, "Accout Created");
-
-        Username = UsernameTextField.getText();
-        Password = newPasswordField.getText();
-        Password = matchPasswordField.getText();
-        Email = EmailTextField.getText();
-        Name = NameTextField.getText();
 
     }//GEN-LAST:event_submitButtonActionPerformed
 
@@ -864,19 +899,19 @@ public class CardGameAppUI extends javax.swing.JFrame {
         mainPanel.add(gamePlayPanel);
         mainPanel.repaint();
         mainPanel.revalidate();
+        
+        usernameTextField.setText(userdata.Username);
+        passwordPasswordField.setText(userdata.Password);
+        
+        userdata.validateUserData(usernameTextField.getText(), passwordPasswordField.getText());
 
         wargame = new WarGameConnector();
         wargame.startNewGame();
         WinnerMessageLabel.setText(wargame.winnerMessage());
         DynamicPlayerCardsRemainingLabel.setText(wargame.player1Score());
         DynamicComputerCardsRemainingLabel.setText(wargame.player2Score());
-
-        userdata.createFolder();
-        userdata.readFile();
-        userdata.checkLines();
-        userdata.validateUserDataLogic(Username, Password);
-
-
+        
+         //JOptionPane.showMessageDialog(null, "Welcome to WAR!!");
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void btnlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogoutActionPerformed
@@ -891,6 +926,10 @@ public class CardGameAppUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void UsernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UsernameTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -960,8 +999,10 @@ public class CardGameAppUI extends javax.swing.JFrame {
     private javax.swing.JButton gameButton;
     private javax.swing.JPanel gamePlayPanel;
     private javax.swing.JLabel gamesPlayedLabel;
+    private javax.swing.JLabel gamplayPlayerLabel;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton leaderBoardButton;
     private javax.swing.JPanel leaderBoardPanel;
     private javax.swing.JScrollPane leaderBoardScrollPane;
