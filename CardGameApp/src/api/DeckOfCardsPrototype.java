@@ -16,13 +16,21 @@ public class DeckOfCardsPrototype {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        CardDeck test = new CardDeck();
+        CardDeckAPI test = new CardDeckAPI();
         test.newDeck();
+        System.out.println("deck: " + test.getDeckRemaining());
+        System.out.println(test.drawCardFromDeck().toString());
+        System.out.println("deck: " + test.getDeckRemaining());        
+        System.out.println(test.drawCardFromDeck().toString());
+        System.out.println("deck: " + test.getDeckRemaining());
+        System.out.println(test.drawCardFromDeck().toString());
+        System.out.println("deck: " + test.getDeckRemaining());
+        System.out.println(test.addToPileFromDeck("mypile").toString());
+        System.out.println("pile: " + test.getPileRemaining("mypile"));
+        System.out.println("deck: " + test.getDeckRemaining());
+        test.shufflePile("mypile");
         
-        Cards cardDrawn = test.drawCardFromDeck();
-        System.out.println(cardDrawn.getCardCode());
-        System.out.println(cardDrawn.getCardValue());
-        System.out.println(cardDrawn.getCardImage());
+       
         
     }
     
