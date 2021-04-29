@@ -3,10 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/alana/Documents/Casino/CardGameApp/src/UserDataBase/UserTranslator.java</file>
-            <file>file:/C:/Users/alana/Documents/Casino/CardGameApp/src/ViewConnectors/WarGameConnector.java</file>
+            <file>file:/C:/Users/alana/Documents/Casino/CardGameApp/src/ViewControllers/UserDataController.java</file>
             <file>file:/C:/Users/alana/Documents/Casino/CardGameApp/src/View/CardGameAppUI.java</file>
-            <file>file:/C:/Users/alana/Documents/Casino/CardGameApp/src/ViewConnectors/UserDataConnector.java</file>
         </group>
     </open-files>
 </project-private>

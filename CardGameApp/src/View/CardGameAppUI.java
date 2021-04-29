@@ -827,7 +827,7 @@ public class CardGameAppUI extends javax.swing.JFrame {
             DynamicGamesPlayedLabel.setText(userdata.GamesPlayed());
             DynamicPlayerSinceLabel.setText(userdata.dateToString());
             DynamicTotalWinsLabel1.setText(userdata.GamesWon());
-            DynamicUsernameLabel.setText(userdata.getName());
+            DynamicUsernameLabel.setText(userdata.getUsername());
         }
     }//GEN-LAST:event_userProfileButtonActionPerformed
 
