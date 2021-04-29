@@ -28,6 +28,7 @@ public class DeckOfCardsPrototype {
         System.out.println(test.addToPileFromDeck("mypile").toString());
         System.out.println("pile: " + test.getPileRemaining("mypile"));
         System.out.println("deck: " + test.getDeckRemaining());
+        test.shufflePile("mypile");
         
        
         
