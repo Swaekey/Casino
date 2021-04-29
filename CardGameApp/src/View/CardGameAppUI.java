@@ -6,8 +6,8 @@
  */
 package View;
 
-import ViewConnectors.UserDataController;
-import ViewConnectors.WarGameConnector;
+import ViewControllers.UserDataController;
+import ViewControllers.WarGameController;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
 
 public class CardGameAppUI extends javax.swing.JFrame {
 
-    WarGameConnector wargame = new WarGameConnector();
+    WarGameController wargame = new WarGameController();
     UserDataController userdata = new UserDataController();
 
     /**
@@ -804,28 +804,31 @@ public class CardGameAppUI extends javax.swing.JFrame {
     }//GEN-LAST:event_leaderBoardButtonActionPerformed
 
     private void gameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gameButtonActionPerformed
-        mainPanel.removeAll();
-        mainPanel.add(gamePlayPanel);
-        mainPanel.repaint();
-        mainPanel.revalidate();
+        if (!userdata.getUsername().equals("player")) {
+            mainPanel.removeAll();
+            mainPanel.add(gamePlayPanel);
+            mainPanel.repaint();
+            mainPanel.revalidate();
 
-        wargame = new WarGameConnector();
-        wargame.startNewGame();
-        WinnerMessageLabel.setText(wargame.winnerMessage());
-        DynamicPlayerCardsRemainingLabel.setText(wargame.player1Score());
-        DynamicComputerCardsRemainingLabel.setText(wargame.player2Score());
+            wargame.startNewGame();
+            WinnerMessageLabel.setText(wargame.winnerMessage());
+            DynamicPlayerCardsRemainingLabel.setText(wargame.player1Score());
+            DynamicComputerCardsRemainingLabel.setText(wargame.player2Score());
+        }
     }//GEN-LAST:event_gameButtonActionPerformed
 
     private void userProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userProfileButtonActionPerformed
-        mainPanel.removeAll();
-        mainPanel.add(userProfilePanel);
-        mainPanel.repaint();
-        mainPanel.revalidate();
+        if (!userdata.getUsername().equals("player")) {
+            mainPanel.removeAll();
+            mainPanel.add(userProfilePanel);
+            mainPanel.repaint();
+            mainPanel.revalidate();
 
-        DynamicGamesPlayedLabel.setText(userdata.GamesPlayed());
-        DynamicPlayerSinceLabel.setText(userdata.dateToString());
-        DynamicTotalWinsLabel1.setText(userdata.GamesWon());
-        DynamicUsernameLabel.setText(userdata.getName());
+            DynamicGamesPlayedLabel.setText(userdata.GamesPlayed());
+            DynamicPlayerSinceLabel.setText(userdata.dateToString());
+            DynamicTotalWinsLabel1.setText(userdata.GamesWon());
+            DynamicUsernameLabel.setText(userdata.getName());
+        }
     }//GEN-LAST:event_userProfileButtonActionPerformed
 
     private void SignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButtonActionPerformed
@@ -858,6 +861,7 @@ public class CardGameAppUI extends javax.swing.JFrame {
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void UpdateProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateProfileButtonActionPerformed
+
         mainPanel.removeAll();
         mainPanel.add(signUpPanel);
         mainPanel.repaint();
@@ -895,23 +899,23 @@ public class CardGameAppUI extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         // TODO add your handling code here:
-        mainPanel.removeAll();
-        mainPanel.add(gamePlayPanel);
-        mainPanel.repaint();
-        mainPanel.revalidate();
-        
-        usernameTextField.setText(userdata.Username);
-        passwordPasswordField.setText(userdata.Password);
-        
-        userdata.validateUserData(usernameTextField.getText(), passwordPasswordField.getText());
 
-        wargame = new WarGameConnector();
-        wargame.startNewGame();
-        WinnerMessageLabel.setText(wargame.winnerMessage());
-        DynamicPlayerCardsRemainingLabel.setText(wargame.player1Score());
-        DynamicComputerCardsRemainingLabel.setText(wargame.player2Score());
-        
-         //JOptionPane.showMessageDialog(null, "Welcome to WAR!!");
+        String user = usernameTextField.getText();
+        String password = passwordPasswordField.getText();
+        System.out.println(user + " " + password);
+        if (userdata.validateUserData(user, password)) {
+            userdata.setUsername(user);
+            wargame.startNewGame();
+            mainPanel.removeAll();
+            mainPanel.add(gamePlayPanel);
+            mainPanel.repaint();
+            mainPanel.revalidate();
+            WinnerMessageLabel.setText(wargame.winnerMessage());
+            DynamicPlayerCardsRemainingLabel.setText(wargame.player1Score());
+            DynamicComputerCardsRemainingLabel.setText(wargame.player2Score());
+        } else {
+            JOptionPane.showMessageDialog(null, "login fail");
+        }
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void btnlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogoutActionPerformed
@@ -920,6 +924,7 @@ public class CardGameAppUI extends javax.swing.JFrame {
         mainPanel.add(logInPanel);
         mainPanel.repaint();
         mainPanel.revalidate();
+        userdata.setUsername("player");
     }//GEN-LAST:event_btnlogoutActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

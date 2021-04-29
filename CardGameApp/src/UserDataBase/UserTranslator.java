@@ -65,27 +65,27 @@ public class UserTranslator {
         }
     }
 
-    public void addUserData(String name, String username, String email, String password) {
+    public void addUserData(String _name, String _username, String _email, String _password) {
         checkLines();
         userID = UUID.randomUUID();
-        Name = name;
-        Username = username;
-        Email = email;
-        Password = password;
+        Name = _name;
+        Username = _username;
+        Email = _email;
+        Password = _password;
         CreatedOn = date;
         GamesPlayed = 0;
         GamesWon = 0;
-        if (!isValidEmail(email)) {
+        if (!isValidEmail(_email)) {
             System.out.println("bad email");
             return;
         }
-        if (!isUniqueUsername(username)) {
+        if (!isUniqueUsername(_username)) {
             System.out.println("username taken");
             return;
         }
         try {
             RandomAccessFile randAccFile = new RandomAccessFile(txtfile + "\\users.txt", "rw");
-            for (int i = 0; i < ln; i++) {
+            for (int i = 1; i < ln; i++) {
                 randAccFile.readLine();
             }
             try {
@@ -111,60 +111,38 @@ public class UserTranslator {
         }
     }
 
-    public void validateUserData(String userName, String password) {
-        try {
-            RandomAccessFile randAccFile = new RandomAccessFile(txtfile + "\\users.txt", "rw");
-            randAccFile.readLine();
-            randAccFile.readLine();
-            //randAccFile.readLine();
-            Username = randAccFile.readLine().substring(10);
-            System.out.println(Username);
-            randAccFile.readLine();
-            Password = randAccFile.readLine().substring(10);
-            System.out.println(Password);
-            randAccFile.readLine();
-            randAccFile.readLine();
-            randAccFile.readLine();
-            if (userName.equals(Username) && password.equals(Password)) {
-                System.out.println("login success");
-            } else {
-                System.out.println("login fail");
-            }
+    
 
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(UserTranslator.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(UserTranslator.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    public void validateUserDataLogic(String userName, String password) {
+    public boolean validateUserData(String _username, String _password) {
         String un;
         String pw;
 
         try {
             RandomAccessFile randAccFile = new RandomAccessFile(txtfile + "\\users.txt", "rw");
-            for (int i = 0; i < ln; i += 8) {
+            for (int i = 0; i < ln-8; i += 8) {
                 randAccFile.readLine();
                 randAccFile.readLine();
                 un = randAccFile.readLine().substring(10);
                 randAccFile.readLine();
                 pw = randAccFile.readLine().substring(10);
-                if (un.equals(Username) && pw.equals(Password)) {
+                if (un.equals(_username) && pw.equals(_password)) {
                     System.out.println("login success");
-                    break;
+                    return true;
                 } else {
-                    System.out.println("login fail");
+                    //System.out.println("login fail");
                 }
                 for (int j = 0; j < 4; j++) {
                     randAccFile.readLine();
                 }
             }
+            System.out.println("login fail");
+            return false;
         } catch (FileNotFoundException ex) {
             Logger.getLogger(UserTranslator.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(UserTranslator.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return false;
     }
 
     public void checkLines() {

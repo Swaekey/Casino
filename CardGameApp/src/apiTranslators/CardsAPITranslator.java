@@ -1,4 +1,4 @@
-package CardDeck;
+package apiTranslators;
 
 /*
  * The Four Lokos
@@ -8,18 +8,19 @@ package CardDeck;
  *          code ("2D", "AS", "0C", ect.), 
  *          image (.png file) 
  *          and value (2D = 2, AS = 14, 0C = 10, etc)
- * These cards are translated from the API to be used throughout the app
+ * These cards are created directly from the API
  */
-public class Cards {
+
+public class CardsAPITranslator {
 
     public String cardCode;
     public String cardImage;
     public int cardValue;
 
-    public Cards(apiTranslators.CardsAPITranslator _card) {
-        cardCode = _card.getCardCode();
-        cardImage = _card.getCardImage();
-        cardValue = _card.getCardValue();
+    public CardsAPITranslator(String _cardCode, String _cardImage, int _cardValue) {
+        this.cardCode = _cardCode;
+        this.cardImage = _cardImage;
+        this.cardValue = _cardValue;
     }
 
     public String getCardCode() {
@@ -57,14 +58,14 @@ public class Cards {
         if (getClass() != _obj.getClass()) {
             return false;
         }
-        final Cards other = (Cards) _obj;
+        final CardsAPITranslator other = (CardsAPITranslator) _obj;
         if (this.cardValue != other.cardValue) {
             return false;
         }
         return true;
     }
 
-    public int compareTo(Cards _card) {
+    public int compareTo(CardsAPITranslator _card) {
         if (this.equals(_card)) {
             return 0;
         } else if (this.getCardValue() > _card.getCardValue()) {

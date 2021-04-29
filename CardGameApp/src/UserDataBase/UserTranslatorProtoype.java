@@ -28,13 +28,15 @@ public class UserTranslatorProtoype {
         userDB.addUserData("peter", "cardPlayer", "peter.33@email", "1234");
         userDB.addUserData("peter", "cardPlayer", "peter.33@email.com", "1234");
         userDB.validateUserData("s_wish", "puppy21");
-        userDB.validateUserDataLogic("s_wish", "puppy21");
-        userDB.validateUserDataLogic("Admin", "password123");
+        userDB.validateUserData("s_wish", "puppy21");
+        System.out.println("this should fail:");
+        userDB.validateUserData("Admin", "123");
         System.out.println(userDB.isUniqueUsername("Admin"));
         System.out.println(userDB.isUniqueUsername("admin"));
         System.out.println(userDB.getUserByUsername("Admin"));
         System.out.println(userDB.getUserByUsername("admin"));
         userDB.addUserData("Maria", "PuddleWart", "m.jones@email.com", "00");
+        userDB.addUserData("Paul", "paul", "test@email.com", "00");
 
     }
 
