@@ -33,3 +33,40 @@ Password: 00
 CreatedOn: Mon Apr 26 13:18:16 EDT 2021
 GamesPlayed: 0
 GamesWon: 0
+
+UserID: 86c8edbc-b679-42dd-9d9e-be2f339d30b5
+Name: Paul
+Username: paul
+Email: test@email.com
+Password: 00
+CreatedOn: Wed Apr 28 20:55:41 EDT 2021
+GamesPlayed: 0
+GamesWon: 0
+
+UserID: fb285173-f079-4630-b9c2-02d0cd6d2ea5
+Name: Sue
+Username: n00bMaster
+Email: sue.the.awsome@gmail.com
+Password: kitten
+CreatedOn: Wed Apr 28 21:02:51 EDT 2021
+GamesPlayed: 0
+GamesWon: 0
+
+UserID: 240cc1ff-4e62-4de7-9c11-0256415fc599
+Name: testplayer
+Username: test
+Email: test123@gmail.com
+Password: 1
+CreatedOn: Wed Apr 28 21:07:16 EDT 2021
+GamesPlayed: 0
+GamesWon: 0
+
+UserID: cc15ddf1-d402-44fc-a69e-95975ddb32c7
+Name: testplayer2
+Username: test2
+Email: test123@gmail.com
+Password: 1
+CreatedOn: Wed Apr 28 21:08:28 EDT 2021
+GamesPlayed: 0
+GamesWon: 0
+
