@@ -6,23 +6,18 @@
  */
 package UserDataBase;
 
-import java.io.BufferedWriter;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.RandomAccessFile;
-import java.io.Writer;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.Scanner;
-import java.util.Arrays;
-import java.util.Comparator;
 
 public class UserTranslator {
 
@@ -32,7 +27,7 @@ public class UserTranslator {
     Date date = new Date();
     String Name, Username, Email, Password;
     int GamesPlayed, GamesWon;
-    Date CreatedOn;
+    Date CreatedOn = date;
 
     public UserTranslator(String Name, String Username, String Email, String Password) {
         userID = UUID.randomUUID();
@@ -111,15 +106,13 @@ public class UserTranslator {
         }
     }
 
-    
-
     public boolean validateUserData(String _username, String _password) {
         String un;
         String pw;
 
         try {
             RandomAccessFile randAccFile = new RandomAccessFile(txtfile + "\\users.txt", "rw");
-            for (int i = 0; i < ln-8; i += 8) {
+            for (int i = 0; i < ln - 8; i += 8) {
                 randAccFile.readLine();
                 randAccFile.readLine();
                 un = randAccFile.readLine().substring(10);
@@ -241,60 +234,19 @@ public class UserTranslator {
         }
 
     }
-
-//    public void updateRecordbyUsername() {
-//        String record;
-//        String newPassword = Password;
-//        String username = Username;
-//
-//        try {
-//            File db = new File(txtfile + "\\users.txt");
-//            File tempDB = new File(txtfile + "\\users_db_temp.txt");
-//
-//            BufferedReader br = new BufferedReader(new FileReader(db));
-//            BufferedWriter bw = new BufferedWriter(new FileWriter(tempDB));
-//
-//            Scanner strInput = new Scanner(System.in);
-//
-//            System.out.println("Enter username: ");
-//            username = strInput.nextLine();
-//
-//            System.out.println("Enter the new Password: ");
-//            newPassword = strInput.nextLine();
-//
-//            while ((record = br.readLine()) != null) {
-//                if (record.equals(username)) {
-//                        return "UserTranslator{"
-//                                + "userID=" + ID
-//                                + ", Name=" + Name
-//                                + ", Username=" + Username
-//                                + ", Email=" + Email
-//                                + ", Password=" + Password + '}';
-//                } else {
-//
-//                   bw.write(record);
-//                }
-//                bw.flush();
-//                bw.newLine();
-//            }
-//
-//            bw.close();
-//            br.close();
-//            db.delete();
-//            boolean success = tempDB.renameTo(db);
-//            System.out.println(success);
-//        } catch (IOException e) {
-//
-//        }
-//
-//    }
-
-    public Date getDate() {
-        return date;
+    public void incrementGamesPlayed(){
+        this.GamesPlayed++;
+    }
+    
+    public void incrementGamesWon(){
+        this.GamesWon++;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public String CreatedOn() {
+        DateFormat dateForm = new SimpleDateFormat("MM-dd-yyyy");
+        String strDate = dateForm.format(CreatedOn);
+
+        return strDate;
     }
 
     public String getName() {
@@ -352,6 +304,5 @@ public class UserTranslator {
     public void setCreatedOn(Date CreatedOn) {
         this.CreatedOn = CreatedOn;
     }
-    
-    
+
 }

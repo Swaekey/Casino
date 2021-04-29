@@ -8,12 +8,7 @@ package View;
 
 import ViewControllers.UserDataController;
 import ViewControllers.WarGameController;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.Date;
-import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -824,8 +819,9 @@ public class CardGameAppUI extends javax.swing.JFrame {
             mainPanel.repaint();
             mainPanel.revalidate();
 
+            
             DynamicGamesPlayedLabel.setText(userdata.GamesPlayed());
-            DynamicPlayerSinceLabel.setText(userdata.dateToString());
+            DynamicPlayerSinceLabel.setText(userdata.CreatedOn());
             DynamicTotalWinsLabel1.setText(userdata.GamesWon());
             DynamicUsernameLabel.setText(userdata.getUsername());
         }
@@ -840,23 +836,28 @@ public class CardGameAppUI extends javax.swing.JFrame {
     }//GEN-LAST:event_SignUpButtonActionPerformed
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        mainPanel.removeAll();
-        mainPanel.add(logInPanel);
-        mainPanel.repaint();
-        mainPanel.revalidate();
+        String name = NameTextField.getText();
+        String user = UsernameTextField.getText();
+        String email = EmailTextField.getText();
+        String password = newPasswordField.getText();
+        
+        System.out.println(name + " " + user + " " + email + " " + password);
+        
+        if (userdata.isUniqueUsername(user)) {
+            userdata.addUserData(name, user, email, password);
+            wargame.startNewGame();
+            mainPanel.removeAll();
+            mainPanel.add(gamePlayPanel);
+            mainPanel.repaint();
+            mainPanel.revalidate();
+            WinnerMessageLabel.setText(wargame.winnerMessage());
+            DynamicPlayerCardsRemainingLabel.setText(wargame.player1Score());
+            DynamicComputerCardsRemainingLabel.setText(wargame.player2Score());
+            JOptionPane.showMessageDialog(null, "Account Created");
+        } else {
+            JOptionPane.showMessageDialog(null, "username is taken");
+        }
 
-        UsernameTextField.setText(userdata.Username);
-        NameTextField.setText(userdata.Name);
-        EmailTextField.setText(userdata.Email);
-        matchPasswordField.setText(userdata.Password);
-        newPasswordField.setText(userdata.Password);
-
-        userdata.createFolder();
-        userdata.readFile();
-        userdata.checkLines();
-        userdata.addUserData(NameTextField.getText(), UsernameTextField.getText(), EmailTextField.getText(), newPasswordField.getText());
-        userdata.isUniqueUsername(userdata.Username);
-        JOptionPane.showMessageDialog(null, "Accout Created");
 
     }//GEN-LAST:event_submitButtonActionPerformed
 

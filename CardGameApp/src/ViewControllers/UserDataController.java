@@ -27,7 +27,6 @@ public class UserDataController extends UserTranslator {
         readFile();
         checkLines();
 
-
     }
 
     public UserDataController() {
@@ -35,18 +34,6 @@ public class UserDataController extends UserTranslator {
         readFile();
         checkLines();
 
-    }
-
-    public String dateToString() {
-        Date date = Calendar.getInstance().getTime();
-        DateFormat dateForm = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
-        String strDate = dateForm.format(date);
-
-        return strDate;
-    }
-
-    public void addData() {
-        super.addUserData(Name, Username, Email, Password);
     }
 
     public String getName() {
@@ -64,7 +51,6 @@ public class UserDataController extends UserTranslator {
     public void setUsername(String Username) {
         this.Username = Username;
     }
-    
 
     public String getEmail() {
         return Email;
@@ -100,10 +86,11 @@ public class UserDataController extends UserTranslator {
         return super.getCreatedOn(); //To change body of generated methods, choose Tools | Templates.
     }
 
-//    @Override
-//    public void updateRecordbyUsername() {
-//        super.updateRecordbyUsername(); //To change body of generated methods, choose Tools | Templates.
-//    }
+    @Override
+    public String CreatedOn() {
+        return super.CreatedOn(); //To change body of generated methods, choose Tools | Templates.
+    }
+
     @Override
     public String getUserByUsername(String user) {
         return super.getUserByUsername(user); //To change body of generated methods, choose Tools | Templates.
@@ -124,10 +111,9 @@ public class UserDataController extends UserTranslator {
         return super.validateUserData(userName, password); //To change body of generated methods, choose Tools | Templates.
     }
 
-
     @Override
-    public void addUserData(String name, String username, String email, String password) {
-        super.addUserData(name, username, email, password); //To change body of generated methods, choose Tools | Templates.
+    public void addUserData(String _name, String _username, String _email, String _password) {
+        super.addUserData(_name, _username, _email, _password); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -138,6 +124,36 @@ public class UserDataController extends UserTranslator {
     @Override
     public void createFolder() {
         super.createFolder(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setGamesWon(int GamesWon) {
+        super.setGamesWon(GamesWon); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int getGamesWon() {
+        return super.getGamesWon(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setGamesPlayed(int GamesPlayed) {
+        super.setGamesPlayed(GamesPlayed); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int getGamesPlayed() {
+        return super.getGamesPlayed(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void incrementGamesWon() {
+        super.incrementGamesWon(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void incrementGamesPlayed() {
+        super.incrementGamesPlayed(); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
