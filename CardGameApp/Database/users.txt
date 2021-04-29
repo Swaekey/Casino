@@ -1,72 +1,72 @@
-UserID: 75dbb1c4-6c43-497b-93a1-60c458969c92
+UserID: 2fa3d99b-d0a6-45d3-9505-37157979a413
 Name: Serena Herter
 Username: s_wish
 Email: serena@email.com
 Password: puppy21
-CreatedOn: Mon Apr 26 11:54:18 EDT 2021
+CreatedOn: Thu Apr 29 19:09:43 EDT 2021
 GamesPlayed: 0
 GamesWon: 0
 
-UserID: 95ccdffd-7b4a-47e6-8321-c88d8e86d838
+UserID: 1e2893ea-303a-4796-a4bd-18e13d64ac0e
 Name: Gwen
 Username: Admin
 Email: admin@email.com
 Password: password123
-CreatedOn: Mon Apr 26 11:54:18 EDT 2021
+CreatedOn: Thu Apr 29 19:09:43 EDT 2021
 GamesPlayed: 0
 GamesWon: 0
 
-UserID: c348e979-6da0-4417-be7d-5fe21e008341
+UserID: 863c072d-2562-4296-9232-cf61bf03f522
 Name: peter
 Username: cardPlayer
 Email: peter.33@email.com
 Password: 1234
-CreatedOn: Mon Apr 26 11:54:18 EDT 2021
+CreatedOn: Thu Apr 29 19:09:43 EDT 2021
 GamesPlayed: 0
 GamesWon: 0
 
-UserID: 91e2ff56-077e-4aa6-ad87-35f5a4c3f83c
+UserID: 82cb896c-c6bf-40ac-9dc2-aed249539544
 Name: Maria
 Username: PuddleWart
 Email: m.jones@email.com
 Password: 00
-CreatedOn: Mon Apr 26 13:18:16 EDT 2021
+CreatedOn: Thu Apr 29 19:09:43 EDT 2021
 GamesPlayed: 0
 GamesWon: 0
 
-UserID: 86c8edbc-b679-42dd-9d9e-be2f339d30b5
+UserID: cb84f934-ac46-466f-aa5e-b99b4d732b03
 Name: Paul
 Username: paul
 Email: test@email.com
 Password: 00
-CreatedOn: Wed Apr 28 20:55:41 EDT 2021
+CreatedOn: Thu Apr 29 19:09:43 EDT 2021
 GamesPlayed: 0
 GamesWon: 0
 
-UserID: fb285173-f079-4630-b9c2-02d0cd6d2ea5
-Name: Sue
-Username: n00bMaster
-Email: sue.the.awsome@gmail.com
-Password: kitten
-CreatedOn: Wed Apr 28 21:02:51 EDT 2021
+UserID: 5089e421-3476-49af-9c43-5c97b952a72a
+Name: Paul2
+Username: paul2
+Email: test2@email.com
+Password: 002
+CreatedOn: Thu Apr 29 19:10:31 EDT 2021
 GamesPlayed: 0
 GamesWon: 0
 
-UserID: 240cc1ff-4e62-4de7-9c11-0256415fc599
-Name: testplayer
-Username: test
-Email: test123@gmail.com
-Password: 1
-CreatedOn: Wed Apr 28 21:07:16 EDT 2021
+UserID: f5da6b01-82a3-4cf4-9621-7e4076fa2975
+Name: Alana
+Username: atraylo
+Email: atraylo@email.com
+Password: apples
+CreatedOn: Thu Apr 29 19:11:07 EDT 2021
 GamesPlayed: 0
 GamesWon: 0
 
-UserID: cc15ddf1-d402-44fc-a69e-95975ddb32c7
-Name: testplayer2
-Username: test2
-Email: test123@gmail.com
-Password: 1
-CreatedOn: Wed Apr 28 21:08:28 EDT 2021
+UserID: 4ae741ac-9b3f-4cc9-bd0e-10ba1d609726
+Name: Alana
+Username: atraylo1
+Email: atraylo@email.com
+Password: apples
+CreatedOn: Thu Apr 29 19:12:47 EDT 2021
 GamesPlayed: 0
 GamesWon: 0
 

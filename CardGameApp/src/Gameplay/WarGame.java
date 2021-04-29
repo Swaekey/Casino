@@ -1,6 +1,6 @@
 /*
  * The Four Lokos
- * Created by: Serena Herter
+ * Created by: Serena Herter, KeShawn Posey
  * Created on: 4/21/2021
  * This class creates a new game of war between two players
  */
@@ -24,29 +24,29 @@ public class WarGame {
     int player1Score;
     int player2Score;
 
-    public WarGame(String player1) {
-        this.player1 = player1;
+    public WarGame(String _player1) {
+        this.player1 = _player1;
         this.deck = new CardDeck();
-        deck.halfDeck(player1, player2);
+        deck.halfDeck(_player1, player2);
 
-        this.player1Score = deck.getPileRemaining(player1);
+        this.player1Score = deck.getPileRemaining(_player1);
         this.player2Score = deck.getPileRemaining(player2);
 
     }
 
-    public WarGame(String player1, String player2) {
-        this.player1 = player1;
-        this.player2 = player2;
+    public WarGame(String _player1, String _player2) {
+        this.player1 = _player1;
+        this.player2 = _player2;
         deck = new CardDeck();
-        deck.halfDeck(player1, player2);
-        this.player1Score = deck.getPileRemaining(player1);
-        this.player2Score = deck.getPileRemaining(player2);
+        deck.halfDeck(_player1, _player2);
+        this.player1Score = deck.getPileRemaining(_player1);
+        this.player2Score = deck.getPileRemaining(_player2);
 
     }
 
-    public String newGameRound(int roundNum) {
+    public String newGameRound(int _roundNum) {
 
-        GameRound gameRound = new GameRound(roundNum);
+        GameRound gameRound = new GameRound(_roundNum);
         rounds.add(gameRound);
         drawCards();
         //System.out.println(deck.getPileRemaining(WAR_PILE));
@@ -64,9 +64,9 @@ public class WarGame {
         return getGameWinner();
     }
 
-    public String newGameRoundAfterTie(int roundNum) {
+    public String newGameRoundAfterTie(int _roundNum) {
 
-        GameRound gameRound = new GameRound(roundNum);
+        GameRound gameRound = new GameRound(_roundNum);
         tie();
         drawCards();
         //System.out.println(deck.getPileRemaining(WAR_PILE));
@@ -142,18 +142,18 @@ public class WarGame {
         return gameRoundWinner + " has won the round!";
     }
 
-    public String getPlayer1CardImageFromRound(int roundNum) {
-        GameRound gameRound = rounds.get(roundNum);
+    public String getPlayer1CardImageFromRound(int _roundNum) {
+        GameRound gameRound = rounds.get(_roundNum);
         return gameRound.getPlayer1Card().getCardImage();
     }
 
-    public String getPlayer2CardImageFromRound(int roundNum) {
-        GameRound gameRound = rounds.get(roundNum);
+    public String getPlayer2CardImageFromRound(int _roundNum) {
+        GameRound gameRound = rounds.get(_roundNum);
         return gameRound.getPlayer2Card().getCardImage();
     }
 
-    public String getWinnerFromRound(int roundNum) {
-        GameRound gameRound = rounds.get(roundNum);
+    public String getWinnerFromRound(int _roundNum) {
+        GameRound gameRound = rounds.get(_roundNum);
         return gameRound.getGameRoundWinner();
     }
 
@@ -174,36 +174,36 @@ public class WarGame {
         return player2Score;
     }
 
-    public void setPlayer1Score(int player1Score) {
-        this.player1Score = player1Score;
+    public void setPlayer1Score(int _player1Score) {
+        this.player1Score = _player1Score;
     }
 
-    public void setPlayer2Score(int player2Score) {
-        this.player2Score = player2Score;
+    public void setPlayer2Score(int _player2Score) {
+        this.player2Score = _player2Score;
     }
 
     public String getGameWinner() {
         return gameWinner + "has won the game!";
     }
 
-    public void setGameWinner(String gameWinner) {
-        this.gameWinner = gameWinner;
+    public void setGameWinner(String _gameWinner) {
+        this.gameWinner = _gameWinner;
     }
 
     public String getPlayer1() {
         return player1;
     }
 
-    public void setPlayer1(String player1) {
-        this.player1 = player1;
+    public void setPlayer1(String _player1) {
+        this.player1 = _player1;
     }
 
     public String getPlayer2() {
         return player2;
     }
 
-    public void setPlayer2(String player2) {
-        this.player2 = player2;
+    public void setPlayer2(String _player2) {
+        this.player2 = _player2;
     }
 
     public int getWAR_PILE() {
