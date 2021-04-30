@@ -96,7 +96,5 @@ public class WarGameController {
     public static void setNumRounds(int numRounds) {
         WarGameController.numRounds = numRounds;
     }
-    
-    
 
 }

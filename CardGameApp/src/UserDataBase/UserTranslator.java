@@ -6,23 +6,18 @@
  */
 package UserDataBase;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.RandomAccessFile;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.table.DefaultTableModel;
 
 public class UserTranslator {
 
@@ -239,53 +234,6 @@ public class UserTranslator {
         }
 
     }
-
-    public static Scanner x;
-
-    public void modifyRecord(String modifyName, String modifyUsername, String modifyEmail, String modifyPassword) {
-
-        String name = "";
-        String username = "";
-        String email = "";
-        String password = "";
-
-        try {
-
-            String filePath = (txtfile + "\\users.txt");
-            String tempFile = "\\temp.txt";
-            File oldFile = new File(filePath);
-            File newFile = new File(tempFile);
-
-            FileWriter fw = new FileWriter(tempFile, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter pw = new PrintWriter(bw);
-            x = new Scanner(new File(filePath));
-            x.useDelimiter("[,\n]");
-
-            while (x.hasNext()) {
-                Name = x.next();
-                Username = x.next();
-                Email = x.next();
-                Password = x.next();
-
-                if (name.equals(Name)) {
-                    pw.println(modifyName + " " + modifyUsername + " " + modifyEmail + " " + modifyPassword);
-                } else {
-                    pw.println(Name + " " + Username + " " + Email + " " + Password);
-                }
-            }
-            x.close();
-            pw.flush();
-            pw.close();
-            oldFile.delete();
-            File dump = new File(filePath);
-            newFile.renameTo(dump);
-        } catch (Exception e) {
-            System.out.println("errors");
-        }
-    }
-
-
 
     public String CreatedOn() {
         DateFormat dateForm = new SimpleDateFormat("MM-dd-yyyy");
