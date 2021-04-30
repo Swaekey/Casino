@@ -12,6 +12,10 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 public class CardGameAppUI extends javax.swing.JFrame {
 
@@ -92,8 +96,8 @@ public class CardGameAppUI extends javax.swing.JFrame {
         leaderBoardButton = new javax.swing.JButton();
         userProfileButton = new javax.swing.JButton();
         gameButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnlogout = new javax.swing.JButton();
+        btnWAR = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
@@ -376,29 +380,35 @@ public class CardGameAppUI extends javax.swing.JFrame {
         LeaderBoardTable.setFont(new java.awt.Font("Impact", 0, 10)); // NOI18N
         LeaderBoardTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "User", "Games Won", "Games Played", "Player Since"
+                "User", "Games Won", "Games Played"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         LeaderBoardTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
         LeaderBoardTable.setRowHeight(30);
         LeaderBoardTable.setGridColor(new java.awt.Color(0, 102, 51));
+        LeaderBoardTable.setRowHeight(25);
         leaderBoardScrollPane.setViewportView(LeaderBoardTable);
 
         javax.swing.GroupLayout leaderBoardPanelLayout = new javax.swing.GroupLayout(leaderBoardPanel);
         leaderBoardPanel.setLayout(leaderBoardPanelLayout);
         leaderBoardPanelLayout.setHorizontalGroup(
             leaderBoardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(leaderBoardPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, leaderBoardPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(leaderBoardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LeaderBoardPageTitlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(leaderBoardScrollPane, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGroup(leaderBoardPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(leaderBoardScrollPane)
+                    .addComponent(LeaderBoardPageTitlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         leaderBoardPanelLayout.setVerticalGroup(
@@ -406,9 +416,9 @@ public class CardGameAppUI extends javax.swing.JFrame {
             .addGroup(leaderBoardPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(LeaderBoardPageTitlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(133, 133, 133)
-                .addComponent(leaderBoardScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(257, Short.MAX_VALUE))
+                .addGap(142, 142, 142)
+                .addComponent(leaderBoardScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(245, Short.MAX_VALUE))
         );
 
         mainPanel.add(leaderBoardPanel, "card2");
@@ -749,25 +759,25 @@ public class CardGameAppUI extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Impact", 0, 10)); // NOI18N
-        jButton2.setText("Logout");
-        jButton2.setMaximumSize(new java.awt.Dimension(61, 19));
-        jButton2.setMinimumSize(new java.awt.Dimension(61, 19));
-        jButton2.setPreferredSize(new java.awt.Dimension(79, 23));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnlogout.setFont(new java.awt.Font("Impact", 0, 10)); // NOI18N
+        btnlogout.setText("Logout");
+        btnlogout.setMaximumSize(new java.awt.Dimension(61, 19));
+        btnlogout.setMinimumSize(new java.awt.Dimension(61, 19));
+        btnlogout.setPreferredSize(new java.awt.Dimension(79, 23));
+        btnlogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnlogoutActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Impact", 0, 10)); // NOI18N
-        jButton3.setText("WAR");
-        jButton3.setMaximumSize(new java.awt.Dimension(81, 23));
-        jButton3.setMinimumSize(new java.awt.Dimension(81, 23));
-        jButton3.setPreferredSize(new java.awt.Dimension(81, 23));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnWAR.setFont(new java.awt.Font("Impact", 0, 10)); // NOI18N
+        btnWAR.setText("WAR");
+        btnWAR.setMaximumSize(new java.awt.Dimension(81, 23));
+        btnWAR.setMinimumSize(new java.awt.Dimension(81, 23));
+        btnWAR.setPreferredSize(new java.awt.Dimension(81, 23));
+        btnWAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnWARActionPerformed(evt);
             }
         });
 
@@ -779,11 +789,11 @@ public class CardGameAppUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(leaderBoardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnWAR, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(gameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnlogout, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(userProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -796,11 +806,11 @@ public class CardGameAppUI extends javax.swing.JFrame {
                         .addGap(64, 64, 64)
                         .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(leaderBoardButton)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnWAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(headerPanelLayout.createSequentialGroup()
                         .addGap(63, 63, 63)
                         .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnlogout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(userProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(headerPanelLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
@@ -818,6 +828,19 @@ public class CardGameAppUI extends javax.swing.JFrame {
         mainPanel.add(leaderBoardPanel);
         mainPanel.repaint();
         mainPanel.revalidate();
+
+        String user = userdata.getUsername();
+        String gamesWon = wargame.getNumRounds();
+        String gamesPlayed = wargame.getGamesplayed();
+
+        Object[] row = {user, gamesWon, gamesPlayed};
+
+        DefaultTableModel model = (DefaultTableModel) LeaderBoardTable.getModel();
+
+        model.addRow(row);
+
+        
+    
     }//GEN-LAST:event_leaderBoardButtonActionPerformed
 
     private void gameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gameButtonActionPerformed
@@ -952,16 +975,16 @@ public class CardGameAppUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_UsernameTextFieldActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogoutActionPerformed
         // TODO add your handling code here:
         mainPanel.removeAll();
         mainPanel.add(logInPanel);
         mainPanel.repaint();
         mainPanel.revalidate();
         userdata.setUsername("player");
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnlogoutActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnWARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWARActionPerformed
         // TODO add your handling code here:
         if (!userdata.getUsername().equals("player")) {
             mainPanel.removeAll();
@@ -975,7 +998,7 @@ public class CardGameAppUI extends javax.swing.JFrame {
             DynamicComputerCardsRemainingLabel.setText(wargame.player2Score());
         }
 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnWARActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1043,6 +1066,8 @@ public class CardGameAppUI extends javax.swing.JFrame {
     private java.awt.Panel UserProfilePageTitlePanel;
     private javax.swing.JTextField UsernameTextField;
     private javax.swing.JLabel WinnerMessageLabel;
+    private javax.swing.JButton btnWAR;
+    private javax.swing.JButton btnlogout;
     private javax.swing.JButton computerDeckjButton;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JButton forfeitButton;
@@ -1052,8 +1077,6 @@ public class CardGameAppUI extends javax.swing.JFrame {
     private javax.swing.JLabel gamplayPlayerLabel;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton leaderBoardButton;
     private javax.swing.JPanel leaderBoardPanel;
