@@ -72,7 +72,6 @@ public class CardGameAppUI extends javax.swing.JFrame {
         DynamicComputerCardsRemainingLabel = new javax.swing.JLabel();
         forfeitButton = new javax.swing.JButton();
         WinnerMessageLabel = new javax.swing.JLabel();
-        btnlogout = new javax.swing.JButton();
         gamplayPlayerLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         signUpPanel = new javax.swing.JPanel();
@@ -93,6 +92,8 @@ public class CardGameAppUI extends javax.swing.JFrame {
         leaderBoardButton = new javax.swing.JButton();
         userProfileButton = new javax.swing.JButton();
         gameButton = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
@@ -483,13 +484,6 @@ public class CardGameAppUI extends javax.swing.JFrame {
         WinnerMessageLabel.setText("@winnerMessage");
         WinnerMessageLabel.setToolTipText("");
 
-        btnlogout.setText("Logout");
-        btnlogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnlogoutActionPerformed(evt);
-            }
-        });
-
         gamplayPlayerLabel.setFont(new java.awt.Font("Impact", 0, 12)); // NOI18N
         gamplayPlayerLabel.setForeground(new java.awt.Color(255, 255, 255));
         gamplayPlayerLabel.setText("PLAYER");
@@ -515,20 +509,14 @@ public class CardGameAppUI extends javax.swing.JFrame {
                 .addGroup(gamePlayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(gamePlayPanelLayout.createSequentialGroup()
                         .addComponent(playerDeckButton, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(gamePlayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(gamePlayPanelLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(gamePlayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(gamePlayPanelLayout.createSequentialGroup()
-                                        .addComponent(forfeitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(gamePlayPanelLayout.createSequentialGroup()
-                                        .addComponent(WinnerMessageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(18, 18, 18))))
+                                .addComponent(forfeitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(gamePlayPanelLayout.createSequentialGroup()
-                                .addGap(89, 89, 89)
-                                .addComponent(btnlogout, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(WinnerMessageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18))))
                     .addGroup(gamePlayPanelLayout.createSequentialGroup()
                         .addComponent(DynamicPlayerCardsRemainingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -576,9 +564,7 @@ public class CardGameAppUI extends javax.swing.JFrame {
                     .addGroup(gamePlayPanelLayout.createSequentialGroup()
                         .addComponent(WinnerMessageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(forfeitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnlogout)))
+                        .addComponent(forfeitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(22, 22, 22))
         );
 
@@ -763,27 +749,63 @@ public class CardGameAppUI extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Impact", 0, 10)); // NOI18N
+        jButton2.setText("Logout");
+        jButton2.setMaximumSize(new java.awt.Dimension(61, 19));
+        jButton2.setMinimumSize(new java.awt.Dimension(61, 19));
+        jButton2.setPreferredSize(new java.awt.Dimension(79, 23));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setFont(new java.awt.Font("Impact", 0, 10)); // NOI18N
+        jButton3.setText("WAR");
+        jButton3.setMaximumSize(new java.awt.Dimension(81, 23));
+        jButton3.setMinimumSize(new java.awt.Dimension(81, 23));
+        jButton3.setPreferredSize(new java.awt.Dimension(81, 23));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
         headerPanel.setLayout(headerPanelLayout);
         headerPanelLayout.setHorizontalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(headerPanelLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
+                .addContainerGap()
                 .addComponent(leaderBoardButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(115, 115, 115)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(gameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(userProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         headerPanelLayout.setVerticalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(gameButton)
             .addGroup(headerPanelLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
                 .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(leaderBoardButton)
-                    .addComponent(userProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(headerPanelLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(leaderBoardButton)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(headerPanelLayout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addGroup(headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(userProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(headerPanelLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(gameButton)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         getContentPane().add(headerPanel, java.awt.BorderLayout.PAGE_START);
@@ -819,10 +841,12 @@ public class CardGameAppUI extends javax.swing.JFrame {
             mainPanel.repaint();
             mainPanel.revalidate();
 
-            
-            DynamicGamesPlayedLabel.setText(userdata.GamesPlayed());
+            String gamesPlayed = wargame.getGamesplayed();
+            String gamesWon = wargame.getNumRounds();
+
+            DynamicGamesPlayedLabel.setText(gamesPlayed);
             DynamicPlayerSinceLabel.setText(userdata.CreatedOn());
-            DynamicTotalWinsLabel1.setText(userdata.GamesWon());
+            DynamicTotalWinsLabel1.setText(gamesWon);
             DynamicUsernameLabel.setText(userdata.getUsername());
         }
     }//GEN-LAST:event_userProfileButtonActionPerformed
@@ -840,9 +864,9 @@ public class CardGameAppUI extends javax.swing.JFrame {
         String user = UsernameTextField.getText();
         String email = EmailTextField.getText();
         String password = newPasswordField.getText();
-        
+
         System.out.println(name + " " + user + " " + email + " " + password);
-        
+
         if (userdata.isUniqueUsername(user)) {
             userdata.addUserData(name, user, email, password);
             wargame.startNewGame();
@@ -919,15 +943,6 @@ public class CardGameAppUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_loginButtonActionPerformed
 
-    private void btnlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogoutActionPerformed
-        // TODO add your handling code here:
-        mainPanel.removeAll();
-        mainPanel.add(logInPanel);
-        mainPanel.repaint();
-        mainPanel.revalidate();
-        userdata.setUsername("player");
-    }//GEN-LAST:event_btnlogoutActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         dispose();
@@ -936,6 +951,31 @@ public class CardGameAppUI extends javax.swing.JFrame {
     private void UsernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UsernameTextFieldActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        mainPanel.removeAll();
+        mainPanel.add(logInPanel);
+        mainPanel.repaint();
+        mainPanel.revalidate();
+        userdata.setUsername("player");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        if (!userdata.getUsername().equals("player")) {
+            mainPanel.removeAll();
+            mainPanel.add(gamePlayPanel);
+            mainPanel.repaint();
+            mainPanel.revalidate();
+
+            wargame.startNewGame();
+            WinnerMessageLabel.setText(wargame.winnerMessage());
+            DynamicPlayerCardsRemainingLabel.setText(wargame.player1Score());
+            DynamicComputerCardsRemainingLabel.setText(wargame.player2Score());
+        }
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -951,16 +991,21 @@ public class CardGameAppUI extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CardGameAppUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CardGameAppUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CardGameAppUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CardGameAppUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CardGameAppUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CardGameAppUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CardGameAppUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CardGameAppUI.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -998,7 +1043,6 @@ public class CardGameAppUI extends javax.swing.JFrame {
     private java.awt.Panel UserProfilePageTitlePanel;
     private javax.swing.JTextField UsernameTextField;
     private javax.swing.JLabel WinnerMessageLabel;
-    private javax.swing.JButton btnlogout;
     private javax.swing.JButton computerDeckjButton;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JButton forfeitButton;
@@ -1008,6 +1052,8 @@ public class CardGameAppUI extends javax.swing.JFrame {
     private javax.swing.JLabel gamplayPlayerLabel;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton leaderBoardButton;
     private javax.swing.JPanel leaderBoardPanel;

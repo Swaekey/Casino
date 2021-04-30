@@ -20,12 +20,13 @@ public class WarGameController {
     static int numRounds = 0;
     WarGame newGame;
     static String player = UserDataController.Username;
+    static int gamesplayed = 0;
 
     //startNewGame
     public WarGame startNewGame() {
         newGame = new WarGame(player);
         numRounds = 0;
-        //set player games played ++
+        gamesplayed++;
         return newGame;
     }
 
@@ -79,5 +80,23 @@ public class WarGameController {
     public String winnerMessage() {
         return newGame.getGameRoundWinner();
     }
+
+    public String getGamesplayed() {
+        return Integer.toString(gamesplayed);
+    }
+
+    public static void setGamesplayed(int gamesplayed) {
+        WarGameController.gamesplayed = gamesplayed;
+    }
+
+    public String getNumRounds() {
+        return Integer.toString(numRounds);
+    }
+
+    public static void setNumRounds(int numRounds) {
+        WarGameController.numRounds = numRounds;
+    }
+    
+    
 
 }

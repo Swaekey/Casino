@@ -234,13 +234,6 @@ public class UserTranslator {
         }
 
     }
-    public void incrementGamesPlayed(){
-        this.GamesPlayed++;
-    }
-    
-    public void incrementGamesWon(){
-        this.GamesWon++;
-    }
 
     public String CreatedOn() {
         DateFormat dateForm = new SimpleDateFormat("MM-dd-yyyy");
@@ -304,5 +297,7 @@ public class UserTranslator {
     public void setCreatedOn(Date CreatedOn) {
         this.CreatedOn = CreatedOn;
     }
+    
+
 
 }
