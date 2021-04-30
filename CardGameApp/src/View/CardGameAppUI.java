@@ -12,10 +12,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
 
 public class CardGameAppUI extends javax.swing.JFrame {
 
@@ -833,14 +830,12 @@ public class CardGameAppUI extends javax.swing.JFrame {
         String gamesWon = wargame.getNumRounds();
         String gamesPlayed = wargame.getGamesplayed();
 
-        Object[] row = {user, gamesWon, gamesPlayed};
+       Object[] row = {user, gamesWon, gamesPlayed};
 
         DefaultTableModel model = (DefaultTableModel) LeaderBoardTable.getModel();
 
         model.addRow(row);
 
-        
-    
     }//GEN-LAST:event_leaderBoardButtonActionPerformed
 
     private void gameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gameButtonActionPerformed
